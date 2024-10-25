@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.15)  25 OCT 2024 23:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.15)  26 OCT 2024 00:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -398,13 +398,13 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (C:\Program Files\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-(C:/Users\Axel\Desktop\universita\Sistemi Operativi\auxil\main.toc)
+(C:/Users\Axel\Desktop\universita\Sistemi Operativi\auxil\main.toc [1
+
+{C:/ProgramData/MiKTeX/fonts/map/pdftex/pdftex.map}])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [1
 
-{C:/ProgramData/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -423,7 +423,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [3]
-<immagini/processo a 5 stati.jpg, id=207, 513.92pt x 242.9075pt>
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[4]
+<immagini/processo a 5 stati.jpg, id=231, 513.92pt x 242.9075pt>
 File: immagini/processo a 5 stati.jpg Graphic file (type jpg)
 <use immagini/processo a 5 stati.jpg>
 Package pdftex.def Info: immagini/processo a 5 stati.jpg  used on input line 16
@@ -441,13 +450,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[4]
-<immagini/5StatiCode2.png, id=213, 271.0125pt x 186.6975pt>
+[5]
+<immagini/5StatiCode2.png, id=237, 271.0125pt x 186.6975pt>
 File: immagini/5StatiCode2.png Graphic file (type png)
 <use immagini/5StatiCode2.png>
 Package pdftex.def Info: immagini/5StatiCode2.png  used on input line 179.
 (pdftex.def)             Requested size: 226.48395pt x 156.02716pt.
-<immagini/7State.png, id=214, 881.2925pt x 504.88625pt>
+<immagini/7State.png, id=238, 881.2925pt x 504.88625pt>
 File: immagini/7State.png Graphic file (type png)
 <use immagini/7State.png>
 Package pdftex.def Info: immagini/7State.png  used on input line 193.
@@ -461,7 +470,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[5
+[6
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -475,7 +484,7 @@ s been already used, duplicate ignored
 l.202 \end{itemize}
                     <./immagini/processo a 5 stati.jpg> <./immagini/5StatiCode2
 .png>]
-<immagini/ControlTable.png, id=223, 546.54187pt x 380.92313pt>
+<immagini/ControlTable.png, id=247, 546.54187pt x 380.92313pt>
 File: immagini/ControlTable.png Graphic file (type png)
 <use immagini/ControlTable.png>
 Package pdftex.def Info: immagini/ControlTable.png  used on input line 209.
@@ -489,7 +498,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[6
+[7
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -511,7 +520,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[7]
+[8]
 Overfull \hbox (26.39934pt too wide) in paragraph at lines 275--276
 []\OT1/cmr/m/n/10.95 Comunicazione tra pro-cessi: in-for-mazioni per la co-mu-n
 i-cazione tra pro-cessi flag,segnali,messaggi 
@@ -525,7 +534,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[8]
+[9]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -534,7 +543,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[9]
+[10]
 main.tex:370: Undefined control sequence.
 l.370 \subsubsubsection
                        {Kernel non é un processo}
@@ -570,8 +579,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[10]
-<immagini/transizioneTraStatiDeiProcessi.png, id=258, 583.42969pt x 374.14781pt
+[11]
+<immagini/transizioneTraStatiDeiProcessi.png, id=282, 583.42969pt x 374.14781pt
 >
 File: immagini/transizioneTraStatiDeiProcessi.png Graphic file (type png)
 <use immagini/transizioneTraStatiDeiProcessi.png>
@@ -587,7 +596,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[11
+[12
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -633,7 +642,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-<immagini/thread1.png, id=265, 539.76656pt x 302.63063pt>
+<immagini/thread1.png, id=289, 539.76656pt x 302.63063pt>
 File: immagini/thread1.png Graphic file (type png)
 <use immagini/thread1.png>
 Package pdftex.def Info: immagini/thread1.png  used on input line 464.
@@ -646,14 +655,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[12
+[13
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.466 \end{figure}
                   ]
-<immagini/ULTeKLT.png, id=284, 529.22719pt x 239.39438pt>
+<immagini/ULTeKLT.png, id=309, 529.22719pt x 239.39438pt>
 File: immagini/ULTeKLT.png Graphic file (type png)
 <use immagini/ULTeKLT.png>
 Package pdftex.def Info: immagini/ULTeKLT.png  used on input line 483.
@@ -667,7 +676,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[13
+[14
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -682,7 +691,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[14
+[15
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -697,7 +706,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[15] (C:/Users\Axel\Desktop\universita\Sistemi Operativi\auxil\main.aux)
+[16] (C:/Users\Axel\Desktop\universita\Sistemi Operativi\auxil\main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -712,29 +721,33 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: A17C5F5E4DA62CB898070AA2BA089929;6571
-(rerunfilecheck)             After:  59C30E326332EFA94E53B5D0BAAACA3C;7167.
+(rerunfilecheck)             Before: 59C30E326332EFA94E53B5D0BAAACA3C;7167
+(rerunfilecheck)             After:  959543EA310F73BCA1FFE5C564EC3912;7511.
  ) 
 Here is how much of TeX's memory you used:
- 10304 strings out of 474486
- 158248 string characters out of 5753573
- 1947542 words of memory out of 5000000
- 32390 multiletter control sequences out of 15000+600000
+ 10315 strings out of 474486
+ 158370 string characters out of 5753573
+ 1948542 words of memory out of 5000000
+ 32394 multiletter control sequences out of 15000+600000
  563874 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,12n,79p,505b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Axel\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
-095.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/P
-rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/font
-s/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C
-:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+
+pdfTeX warning (dest): name{section.3} has been referenced but does not exist, 
+replaced by a fixed one
+
+ <C:\Users\Axel\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm109
+5.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pro
+gram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/
+Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 Output written on "C:/Users\Axel\Desktop\universita\Sistemi Operativi\out\main.
-pdf" (15 pages, 657257 bytes).
+pdf" (16 pages, 661854 bytes).
 PDF statistics:
- 365 PDF objects out of 1000 (max. 8388607)
- 85 named destinations out of 1000 (max. 500000)
- 332 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 392 PDF objects out of 1000 (max. 8388607)
+ 92 named destinations out of 1000 (max. 500000)
+ 364 words of extra memory for PDF output out of 10000 (max. 10000000)
 
