@@ -1,0 +1,41 @@
+\contentsline {section}{\numberline {1}I Processi}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Requisiti di OS}{2}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Cos'è un processo}{2}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Processo in escuzione}{2}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Fasi di un processo}{2}{subsubsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.4}Elementi di un processo}{3}{subsubsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.2}Process Control Block}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Traccia di un processo}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Eseuzione di un processo}{3}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Modello dei Processi a 2 stati}{3}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Creazione di un processo}{4}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Terminazione di un processo}{4}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}Modello dei processi a 5 stati}{4}{subsection.1.8}%
+\contentsline {subsection}{\numberline {1.9}Processi Sospesi}{5}{subsection.1.9}%
+\contentsline {subsection}{\numberline {1.10}Strutture di controllo del OS}{6}{subsection.1.10}%
+\contentsline {subsubsection}{\numberline {1.10.1}Memory Table}{6}{subsubsection.1.10.1}%
+\contentsline {subsubsection}{\numberline {1.10.2}Tabelle per l'I/O}{7}{subsubsection.1.10.2}%
+\contentsline {subsubsection}{\numberline {1.10.3}File Table}{7}{subsubsection.1.10.3}%
+\contentsline {subsubsection}{\numberline {1.10.4}Process Table}{7}{subsubsection.1.10.4}%
+\contentsline {subsection}{\numberline {1.11}Attributi di un processo}{7}{subsection.1.11}%
+\contentsline {subsubsection}{\numberline {1.11.1}Come si Identifica un processo}{7}{subsubsection.1.11.1}%
+\contentsline {subsubsection}{\numberline {1.11.2}Stato del processore}{8}{subsubsection.1.11.2}%
+\contentsline {subsubsection}{\numberline {1.11.3}Control Block del Processo}{8}{subsubsection.1.11.3}%
+\contentsline {subsection}{\numberline {1.12}Processi e Memoria virtuale}{8}{subsection.1.12}%
+\contentsline {subsection}{\numberline {1.13}Modalita di esecuzione}{8}{subsection.1.13}%
+\contentsline {subsubsection}{\numberline {1.13.1}Kernel Mode}{9}{subsubsection.1.13.1}%
+\contentsline {subsubsection}{\numberline {1.13.2}Da UserMode a KernelMode}{9}{subsubsection.1.13.2}%
+\contentsline {subsection}{\numberline {1.14}Creazione del processo}{10}{subsection.1.14}%
+\contentsline {subsection}{\numberline {1.15}Switching tra processi}{10}{subsection.1.15}%
+\contentsline {subsubsection}{\numberline {1.15.1}Quando effettuare lo switching}{10}{subsubsection.1.15.1}%
+\contentsline {subsubsection}{\numberline {1.15.2}Passaggi per lo switching}{10}{subsubsection.1.15.2}%
+\contentsline {subsubsection}{\numberline {1.15.3}Il Sistema operativo é un processo}{10}{subsubsection.1.15.3}%
+\contentsline {subsubsection}{\numberline {1.15.4}Esempio in Linux}{11}{subsubsection.1.15.4}%
+\contentsline {subsubsection}{\numberline {1.15.5}Stati in Unix}{11}{subsubsection.1.15.5}%
+\contentsline {subsubsection}{\numberline {1.15.6}Transizione tra processi}{12}{subsubsection.1.15.6}%
+\contentsline {subsection}{\numberline {1.16}Immagine del processo in Unix}{12}{subsection.1.16}%
+\contentsline {section}{\numberline {2}I Thread}{13}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Perché introdurre i thread}{13}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}ULT e KLT}{13}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Processi e Thread in Linux}{14}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Conclusione}{15}{section.3}%
