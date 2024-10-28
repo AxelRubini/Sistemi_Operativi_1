@@ -535,7 +535,350 @@ quello che succede che il campo del PCB viene aggiornato con il segnale che é s
 viene schedulato, il kernel controlla se ci sono segnali da gestire se si esegue la funzione di gestione del segnale,
 alcuni signa handlers possono essere sovrascritti dal programmatore, alcuni segnali hanno l'handler non sovrascrivibile,
 in ogni caso sono eseguiti in user mode, mentre gli interrupt sono eseguiti in kernel mode.
+\section{Scheduling}
+Un sistema operativo deve allocare risorse tra i processi, tra le risorse quella piú ovvia é il processore, l' uso del
+    processore é detto scheduling, la metodologia che gestisce l'uso del processore é detta politica di scheduling,
+    lo scopo dello scheduling é assegnare ad ogni processore qualcosa de eseguire, bisogna quindi che lo scheduling
+    sia il piú efficiente possibile, tenendo conto di vari aspetti:
+    \begin{itemize}
+        \item tempo di risposta (Tendo a minimizzare)
+        \item throughput (Tendo a massimizzare)
+        \item efficienza del processore (Tendo a massimizzare)
+    \end{itemize}
+    altri obbiettivi dello scheduling é non fare favoritismi tra i processi, tuttavia nei moderni sistemi operativi
+    esiste la priorità dei processi, quindi alcuni processi vengono privilegiati rispetto altri, inoltre lo scheduling
+    deve evitare lo starvation, ovvero che un processo non venga mai eseguito, noon lasciare mai il processore inattivo,
+    avere un overhead basso (il tempo per fare lo scheduling deve essere il piú basso possibile),
+    \subsection{Tipi di scheduling}
+    \begin{itemize}
+        \item Long-term scheduling: decide quali processi devono essere caricati in memoria
+        \item Medium-term scheduling: decide quali processi devono essere spostati dalla memoria principale alla memoria secondaria
+        \item Short-term scheduling: decide quale processo deve essere eseguito sulla CPU
+        \item I/O scheduling: decide quale processo deve essere eseguito sul dispositivo di I/O
+    \end{itemize}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{immagini/7State}
+        \caption{Tipi di scheduling}
+    \end{figure}
+    abbiamo visto che si di ready che di blocked ci sono le versioni suspended (sono in memoria secondaria), molte
+    delle transizioni sono dovute allo scheduler, quello che decide se un processo appena creato Ready o Ready Suspended
+    é il long-term scheduler, il medium-term decide tra le versioni suspended e non suspended, il short-term scheduler
+    decide se un processo é Ready o Running, il I/O scheduler decide se un processo é Blocked o Ready
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{immagini/implementazioneScheduling}
+        \caption{Tipi di scheduling}
+    \end{figure}
+    lo scheduling fa una distinzione tra processi interattivi e processi batch, i processi in batch hanno una coda, mentre
+    quelli interattivi cercano direttaqmente di essere eseguiti, Il long-term come detto sopra decide se i processi sono
+    messi in ready o ready suspended, il medium term scheduler decide se un processo é messo in ready o ready suspended
+    oppure blocked o blocked suspended e viceversa, il short term scheduler decide se un processo é messo in running o blocked
+    \subsection{Long-term scheduling}
+    Decidide quali programmi sono ammessi nel sistema, spesso segue una logica FIFO (First In First Out),
+    spesso é un FIFO "Corretto, tenendo conto di criteri come la priorità, il tempo di esecuzione, ecc.
+
+    Inoltre controlla il grado di multiprogrammazione, ovvero il numero di processi che possono essere eseguiti
+    contemporaneamente, il grado di multiprogrammazione é il numero di processi che possono essere eseguiti
+    contemporaneamente,
+
+    Piú processi ci sono, piú é piccola la percentuale di tempo per cui ogni processo viene eseguito.
+
+    Le strategie di scheduling sono:
+    \begin{itemize}
+        \item i lavori batch vengono accodati e il LTS li prende man mano che il processore é libero
+        \item I lavori interattivi vengono ammessi fino a saturazione del sistema
+        \item Se si sa quali processi sono I/O bound e quali sono CPU bound, si possono fare scelte migliori facendo un giusto mix tra due tipi
+        \item Se si sa quali processi fanno richieste a quali dispositivi, di I/O, fare in modo di bilanciare le richieste
+    \end{itemize}
+    Il Long-term scheduler puó essere chiamato anche quando non ci sono nuovi processi, ad esempio quando termina un processo oppure
+    quando un processo é idle da troppo tempo.
+
+    \subsection{Medium-term scheduling}
+    Il medium-term scheduler decide se bisogna fare degli aggiustamenti tra RAM e Disco, il motivo principale é quello di gestire
+    la multiprogrammazzione, se terminano 10 processi ad esempio, il medium term scheduler decide quali processi ready
+    presenti in memoria secondaria devono essere spostati in memoria principale, il medium term scheduler é chiamato anche
+    \subsection{short-term scheduling}
+    Il short-term scheduler é chiamato anche dispatcher, decide quale processo deve essere eseguito sulla CPU,
+    ed é quello eseguito piú frequentemente.viene invocato in seguito a:
+    \begin{itemize}
+        \item interruzzioni di clock
+        \item interruzzioni di I/O
+        \item chiama di sistema
+        \item segnali
+    \end{itemize}
+
+    Lo scopo dello short-term scheduler é quello di allocare tempo di esucozione tra i processori, per ottimizzare
+    il comportamento dell'intero sistema, per valutare quindi una politica di scheduling bisogna valutare:
+    \begin{itemize}
+        \item Utente: tempo di risposta, tempo di esecuzione
+        \item Sistema: throughput, efficienza del processore
+    \end{itemize}
+    L' altra categoria é quella se sono criteri se sono criteri prestazionali (quantitativi) oppure quelli non
+    prestazionali (qualitativi) che sono piú difficili da misurare.
+    \subsubsection{Criteri Utente}
+    Prestazionali :
+        \begin{itemize}
+        \item   \textbf{Turnaround time}: tempo tra la creazione e la terminazione di un processo
+        \item  \textbf{Tempo di risposta}: tempo tra la creazione e la prima risposta
+        \item  \textbf{Deadline}: tempo entro il quale un processo deve essere completato
+    \end{itemize}
+    Non Prestazionali:
+    \begin{itemize}
+        \item \textbf{Predictability}: quanto é prevedibile il tempo di esecuzione
+    \end{itemize}
+    \subsubsection{Criteri di sistema}
+    Prestazionali:
+    \begin{itemize}
+        \item \textbf{Throughput}: numero di processi completati in un certo intervallo di tempo
+        \item \textbf{Efficienza del processore}: percentuale di tempo in cui il processore é utilizzato
+    \end{itemize}
+    Non Prestazionali:
+    \begin{itemize}
+        \item \textbf{Equità}: tutti i processi devono avere la stessa possibilitá di essere eseguiti
+        \item \textbf{Enforces priorities}: i processi con priorità piú alta devono essere eseguiti prima
+        \item \textbf{Balancing resources}: bilanciare l'uso delle risorse
+        \end{itemize}
+    \subsection{Turnaround time}
+    Il turnaround time é il tempo tra la creazione e la terminazione di un processo, comprende i vari tempi di attesa (I/O, CPU, ecc.)
+    si usa spesso per processi non interattivi.
+    \subsection{Tempo di risposta}
+    Il tempo di risposta é il tempo tra la creazione e la prima risposta, é importante per i processi interattivi (es. un utente che clicca su un bottone)
+    lo scheduler in questo caso ha un duplice obbiettivo per lo scheduler: minimizzare il tempo di risposta medio
+    e massimizzare il numero di utenti che hanno un risposta veloce.
+    \subsection{Deadline}
+    La deadline é il tempo entro il quale un processo deve essere completato, é importante per i processi real-time,
+    un buon dispatcher deve massimizzare il numero di scadenze rispettate, per quanto riguarda invece la Predictability
+    se lancio tante volte lo stesso processo, il tempo di esecuzione deve essere sempre lo stesso, altrimenti il
+    dispatcher non é prevedibile.
+    \subsection{Throughput}
+    Il throughput é il numero di processi completati in un certo intervallo di tempo, ovviamente l' obbietti é massimizzare
+    il throughput, é una misura di quanto lavoro viene effettuato.
+    \subsection{Utilizzo del processore}
+    L' utilizzo del processore é la percentuale di tempo in cui il processore é utilizzato, ovviamente l' obbiettivo é massimizzare
+    l' utilizzo del processore, quindi il processore non deve mai essere inattivo, questo é un criterio molto costosi condivisi
+    tra piú utenti.
+    \subsection{Bilanciamento delle risorse}
+    Lo scheduler deve bilanciare l'uso delle risorse, ad esempio se un processo é CPU bound, non ha senso assegnargli un
+    tempo di I/O, quindi lo scheduler deve bilanciare l'uso delle risorse, quindi processi che utilizzano meno le risorse attualmente
+    piú usate devono essere favoriti.
+    \subsection{Fairness e Priorità}
+    La fairness é il concetto che tutti i processi devono avere la stessa possibilitá di essere eseguiti, per cui non sono
+    presenti favoritismi, a meno che non ci siano priorità, in questo caso i processi con priorità piú alta devono essere eseguiti
+    prima, inoltre questo causera la creazioni di code di processi, quindi lo scheduler deve essere in grado di gestire le code
+    di processi.
+    \subsection{Prioritá e Starvation}
+    La prioritá ha un problema, ovvero che puó indurre starvation, esempio: se un processo ha una bassa priorità, potrebbe
+    non essere mai eseguito, quindi lo scheduler deve evitare lo starvation, ovvero che un processo non venga mai eseguito,
+    per evitare lo starvation si puó usare la politica di aging, ovvero aumentare la priorità di un processo che non viene mai eseguito.
+    \subsection{Politiche di scheduling}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{immagini/PoliticheDiScheduling}
+        \caption{Politiche di scheduling}
+    \end{figure}
+    Raramente si usa una sola politica di scheduling, si usano piú politiche di scheduling, inoltre non si
+    utilizzano gli algoritmi di scheduling implementate, ma revisioni di esse.
+    \subsection{Selection Function}
+    La selection function é quella che sceglie effetivamente quale processo deve essere eseguito,
+    la scelta viene fatta in base a vari criteri:
+    \begin{itemize}
+        \item w = tempo di attesa
+        \item e = tempo trascorso in esecuzione
+        \item s = tempo totale richiesto (stimato), incluso quello giá servito (e)
+    \end{itemize}
+    \subsection{Decision Mode}
+    Specifica in quali istanti di tempo la funzione di selezione viene invocata, ci sono 2 possibili modi:
+    \begin{itemize}
+        \item Non pre-emptive: la funzione di selezione viene invocata solo quando il processo in esecuzione termina
+        \item Pre-emptive: la funzione di selezione viene invocata ad intervalli regolari
+    \end{itemize}
+    \subsubsection{Pre-emptive - Non pre-emptive}
+    Non pre-emptive: se un processo é in esecuzione, allora arriva o fino a terminazione of fino ad un I/O, non gli tolgo il processore
+
+    Pre-emptive: Il sistema operativo puó interrompere un processo in esecuzione per eseguire un altro processo, in questo caso il processo
+    passera da running a ready, la preemption di un processo puó avvenire o pre l'arrivo di nuovi processi (appena creati) o per un interrupt di I/O,
+    oppure per interrupt di clock, quest'ultimo é periodico per evitare che alcuni processi monopolizzino il processore.
+    \subsection{ESEMPIO}
+    Scenario Comune :
+    \begin{table}[H]
+        \raggedright
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \textbf{Processo} & \textbf{Tempo di arrivo} & \textbf{Tempo di esecuzione} \\
+            \hline
+            A & 0 & 3   \\
+            \hline
+            B & 2 & 6 \\
+            \hline
+            C & 4 & 4  \\
+            \hline
+            D & 6 & 5  \\
+            \hline
+            E & 8 & 2  \\
+            \hline
+        \end{tabular}
+    \end{table}
+    \subsection{First Come First Served}
+    Tutti i processi sono aggiunti alla coda ready, é non pre-emptive, quando il processo ha finito di essere eseguito, si passa
+    al processo che ha aspettato di piú nella coda.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.75\textwidth]{immagini/FCFS}
+        \caption{First Come First Served}
+    \end{figure}
+    L' algoritmo é molto semplice, é anche molto equo, dal punto di vista del sistema operativo, un processo corto
+    deve aspettare che altri processi terminino, favorisce i processi CPU bound, per cui degenera perché un processo 
+    monopolizza il processore.
+    \subsection{Round Robin}
+        \begin{table}[H]
+        \raggedright
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \textbf{Processo} & \textbf{Tempo di arrivo} & \textbf{Tempo di esecuzione} \\
+            \hline
+            A & 0 & 3   \\
+            \hline
+            B & 2 & 6 \\
+            \hline
+            C & 4 & 4  \\
+            \hline
+            D & 6 & 5  \\
+            \hline
+            E & 8 & 2  \\
+            \hline
+        \end{tabular}
+    \end{table}
+    Il round robin usa la preemption, basandosi su un clock, Talvolta chiamato time slicing, perché ogni processo
+    ha una fetta di tempo, é un algoritmo di scheduling per processi interattivi.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.75\textwidth]{immagini/RoundRobin}
+        \caption{Round Robin}
+    \end{figure}
+    in questo caso il processo E finisce prima rispetto all'algoritmo FCFS, nel
+    caso ci sia una coda si utilizza una politica FIFO, quando un processo finisce il tempo di esecuzione viene ri-aggiunto alla coda
 
 
+    \textbf{Quanto di tempo} é un intervallo di tempo che viene assegnato ad ogni processo e rappresenta il tempo per il quale il processo ha accesso
+    al processore,il quanto di tempo deve essere non troppo piú grande del tipico tempo di interazione di un processo.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.75\textwidth]{immagini/Quanto di tempo Giusto}
+        \caption{Quanto di tempo piú grande del tempo di interazione}
+    \end{figure}
+    Se invece uno sceglie il quanto di tempo piú piccolo, il processo che va in esecuzione avrebbe bisogno di piú tempo del quanto,
+    prima della risposta gli viene tolto il processore, questo significa che il tempo di risposta é piú lungo.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.75\textwidth]{immagini/Quanto piú piccolo}
+        \caption{Quanto di tempo piú piccolo del tempo di interazione}
+    \end{figure}
+    Nel momento in cui si sceglie di usare il round robin, si fa una analisi statistica di quantitá di tempo di esecuzione
+    necessaria per i processi per assegnare il quanto di tempo, invece se assegno un quanto di tempo troppo grande, allora
+    il round robin diventa un FCFS.
+    \subsubsection*{CPU bound vs I/O bound}
+    C'é un problema con il round robin, per quello che riguarda i processi CPU bound contro i processi I/O bound,
+    anche con il round robin anche i processi CPU bound vengono favoriti, perché i processi CPU bound utilizzano
+    tutto il quanto di tempo, mentre i processi I/O bound non utilizzano tutto il quanto di tempo in caso di richiesta
+    bloccante, dal punto di vista dell'equitá non va bene, é stata proposta una soluzione \textbf{Round Robin Virtuale}
+    che funziona come il round robin, ma se un processo fa una richiesta bloccante, allora il processo non va in una coda
+    dei ready dopo aver completato la richiesta di I/O come succede normalmente, invece con il round robin virtuale
+    esiste una coda ausiliaria, che accoda i processi che sono stati blocked, dopo di che il dispatcher sceglie prima
+    la coda ausiliaria e poi la coda dei ready.
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.75\textwidth]{immagini/RoundRobinVirtuale}
+        \caption{Round Robin Virtuale}
+    \end{figure}
+    Da notare che scegliendo dalla coda ausiliaria, rimando i processi in esecuzione solo per il quanto di tempo che gli rimaneva
 
+    \subsection{Shortest Process Next}
+    Il Shortest Process Next é un algoritmo non pre-emptive, per implentarlo é necessario sapere quanto tempo di escuzione il
+    processo richiede, la logica per scegliere il prossimo processo é quello col tempo di esecuzione piú breve,
+    questo fa si che i processi corti scavalchino i processi piú lunghi.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.75\textwidth]{immagini/SPN}
+        \caption{Shortest Process Next}
+    \end{figure}
+    Il problema é quello di dover dare una stima del tempo di esecuzione dei processi,
+    ma anche assumendo di avere una buona stima, dal punto di vista dei criteri utente, la predictability di processi
+    lunghi é ridotta, questo addirittura potrebbe creare starvation, perché i processi corti vengono sempre eseguiti
+    mentre i processi lunghi potrebbero rimanere in attesa per sempre, se il tempo stimato é sbagliato il sistema operativo
+    potrebbe abortire il processo.
+    \subsubsection*{Stimare il tempo di esecuzione}
+    Per stimare il tempo di esecuzione, ci sono alcuni processi che vengono eseguiti piú volte,
+    quindi per questo tipo di processi si puó guardare il passato per prevedere il futuro, ad esempio facendo una
+    media dei tempi di esecuzione passati,
+    \begin{equation}
+    S_n_+_1 = \frac{1}{n} \sum_{i=1}^{n} T_i\label{eq:Media dei tempi di esecuzione}
+    \end{equation}
+    per fare questo significa che il dispatcher deve tenere traccia del tempo di esecuzione di ogni processo, questo
+    potrebbe richiedere molta memoria, l'altro modo é quello di ricordarmi solo l'ultimo tempo di esecuzione e l'ultima
+    stime con :
+    \begin{equation}
+        S_n_+_1 = \frac{1}{n}T_n + \frac{n-1}{n}S_n\label{eq:Mi ricordo solo l'ultimo tempo di esecuzione e l'ultima stima}
+    \end{equation}
+    questa si puo' generalizzare con un parametro $\alpha$, dove $\alpha$ é un valore tra 0 e 1 otteniamo:
+    \begin{equation}
+        S_n_+_1 = \alpha T_n + (1-\alpha)S_n\label{eq:formula con $\alpha$}
+    \end{equation}
+    formula media esponenziale:
+    \begin{equation}
+        S_n_+_1 = \alpha T_n + ... + (1-\alpha)^iT_n_-_i +...+ (1-\alpha)^nS_1\label{eq: Exponential Averaging }
+    \end{equation}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.75\textwidth]{immagini/AnalisiDiAlphaSpn}
+        \caption{Analisi di Alpha}
+    \end{figure}
+    Piú $\alpha$ é vicino a 1, piú sparisce velocemente il passato, questo serve a capire che con un buon $\alpha$ si 
+    possono fare delle ottime previsioni.
+    \subsubsection*{Esempio}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.75\textwidth]{immagini/EsempioExponentialAveraging}
+        \caption{Esempio 1}
+    \end{figure}
+    Abbiamo fissato un processo e diciamo che la sua prima istanza cresce e poi si stabilizza, se io facessi
+    semplicemente la media, quello che la media predirebbe sarebbe un valore lontano dall'obbiettivo, invece
+    se uso degli $\alpha$ fissi, siamo molto piú vicini alla curva reale.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.75\textwidth]{immagini/EsempioExponentialAveraging2}
+        \caption{Esempio 2}
+    \end{figure}
+    Praticamente dopo un certo tempo, i valori vecchi vengono dimenticati, specialmente per $\alpha$ grandi
+    \subsection{Shortest Remaining Time}
+    Lo Shortest Remaining Time é una versione pre-emptive dello Shortest Process Next, é preemptive sulla base che arrivi
+    un nuovo processo, quindi io stimo il tempo rimanente per l'esecuzione, se il tempo rimanente di un processo in coda é minore
+    del tempo di esecuzione del processo in esecuzione, allora il processo in esecuzione viene pre-empted.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.75\textwidth]{immagini/SRT}
+        \caption{Shortest Remaining Time}
+    \end{figure}
+    I processi lunghi comunque possono soffrire di starvation, perché i processi corti vengono sempre eseguiti, anche in
+    questo caso é necessario sapere il tempo di esecuzione.
+    \subsection{Highest Response Ratio Next}
+    L' algoritmo Highest Response Ratio Next é un algoritmo non pre-emptive, é una versione migliorata dello Shortest Process Next,
+    che risolve il problema dello starvation, é basato sul tempo di attesa, il tempo di esecuzione e il tempo totale richiesto,
+    é un compromesso tra quanto tempo sto aspettando e quanto tempo ci metto ad eseguire.
+
+    L'algoritmo massimizza il seguente rapporto:
+    \begin{equation}
+        \frac{w+s}{s} = \frac{tempo trascorso in attesa + tempo totale richiesto}{tempo totale richiesto}
+    \end{equation}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.75\textwidth]{immagini/HRRN}
+        \caption{Highest Response Ratio Next}
+    \end{figure}
+    \subsectioni*{Diagramma Riassuntivo}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.75\textwidth]{immagini/RiassuntoScheduling}
+        \caption{Diagramma Riassuntivo}
+    \end{figure}
 \end{document}

@@ -40,3 +40,28 @@
 \contentsline {subsection}{\numberline {2.3}Processi e Thread in Linux}{15}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Gli stati dei processi in Linux}{16}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Segnali ed interrupt in Linux}{16}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Scheduling}{16}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Tipi di scheduling}{17}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Long-term scheduling}{17}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Medium-term scheduling}{18}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}short-term scheduling}{18}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Criteri Utente}{19}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Criteri di sistema}{19}{subsubsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.5}Turnaround time}{19}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Tempo di risposta}{19}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Deadline}{19}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Throughput}{19}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Utilizzo del processore}{19}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Bilanciamento delle risorse}{20}{subsection.3.10}%
+\contentsline {subsection}{\numberline {3.11}Fairness e Priorità}{20}{subsection.3.11}%
+\contentsline {subsection}{\numberline {3.12}Prioritá e Starvation}{20}{subsection.3.12}%
+\contentsline {subsection}{\numberline {3.13}Politiche di scheduling}{20}{subsection.3.13}%
+\contentsline {subsection}{\numberline {3.14}Selection Function}{21}{subsection.3.14}%
+\contentsline {subsection}{\numberline {3.15}Decision Mode}{21}{subsection.3.15}%
+\contentsline {subsubsection}{\numberline {3.15.1}Pre-emptive - Non pre-emptive}{21}{subsubsection.3.15.1}%
+\contentsline {subsection}{\numberline {3.16}ESEMPIO}{21}{subsection.3.16}%
+\contentsline {subsection}{\numberline {3.17}First Come First Served}{21}{subsection.3.17}%
+\contentsline {subsection}{\numberline {3.18}Round Robin}{22}{subsection.3.18}%
+\contentsline {subsection}{\numberline {3.19}Shortest Process Next}{24}{subsection.3.19}%
+\contentsline {subsection}{\numberline {3.20}Shortest Remaining Time}{27}{subsection.3.20}%
+\contentsline {subsection}{\numberline {3.21}Highest Response Ratio Next}{27}{subsection.3.21}%
