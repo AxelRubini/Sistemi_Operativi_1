@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.15)  28 OCT 2024 23:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.15)  1 NOV 2024 17:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -315,20 +315,20 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box56
 )
 (C:/Users\Axel\Desktop\universita\Sistemi Operativi\auxil\main.aux
-C:/Users\Axel\Desktop\universita\Sistemi Operativi\auxil\main.aux:90: Missing \
+C:/Users\Axel\Desktop\universita\Sistemi Operativi\auxil\main.aux:91: Missing \
 endcsname inserted.
 <to be read again> 
                    \alpha 
-l.90 ... con $\alpha $}{{3}{25}{}{equation.3.3}{}}
+l.91 ... con $\alpha $}{{3}{26}{}{equation.3.3}{}}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
-C:/Users\Axel\Desktop\universita\Sistemi Operativi\auxil\main.aux:90: Missing \
+C:/Users\Axel\Desktop\universita\Sistemi Operativi\auxil\main.aux:91: Missing \
 endcsname inserted.
 <to be read again> 
                    \alpha 
-l.90 ... con $\alpha $}{{3}{25}{}{equation.3.3}{}}
+l.91 ... con $\alpha $}{{3}{26}{}{equation.3.3}{}}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
@@ -432,7 +432,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[2]
+[2] (Processi.tex
+
+Processi.tex:1: LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \usepackage
+               {graphicx}\section{I Processi}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -451,16 +464,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [4]
-<immagini/processo a 5 stati.jpg, id=361, 513.92pt x 242.9075pt>
-File: immagini/processo a 5 stati.jpg Graphic file (type jpg)
-<use immagini/processo a 5 stati.jpg>
-Package pdftex.def Info: immagini/processo a 5 stati.jpg  used on input line 16
-4.
-(pdftex.def)             Requested size: 226.48395pt x 107.05011pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -470,16 +473,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [5]
-<immagini/5StatiCode2.png, id=367, 271.0125pt x 186.6975pt>
+<immagini/processo a 5 stati.jpg, id=390, 513.92pt x 242.9075pt>
+File: immagini/processo a 5 stati.jpg Graphic file (type jpg)
+<use immagini/processo a 5 stati.jpg>
+Package pdftex.def Info: immagini/processo a 5 stati.jpg  used on input line 12
+5.
+(pdftex.def)             Requested size: 226.48395pt x 107.05011pt.
+<immagini/5StatiCode2.png, id=391, 271.0125pt x 186.6975pt>
 File: immagini/5StatiCode2.png Graphic file (type png)
 <use immagini/5StatiCode2.png>
-Package pdftex.def Info: immagini/5StatiCode2.png  used on input line 179.
+Package pdftex.def Info: immagini/5StatiCode2.png  used on input line 140.
 (pdftex.def)             Requested size: 226.48395pt x 156.02716pt.
-<immagini/7State.png, id=368, 881.2925pt x 504.88625pt>
-File: immagini/7State.png Graphic file (type png)
-<use immagini/7State.png>
-Package pdftex.def Info: immagini/7State.png  used on input line 193.
-(pdftex.def)             Requested size: 226.48395pt x 129.74965pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -494,19 +498,24 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.202 \end{itemize}
-                   
+l.148 \begin{itemize}
+                     
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.202 \end{itemize}
-                    <./immagini/processo a 5 stati.jpg> <./immagini/5StatiCode2
-.png>]
-<immagini/ControlTable.png, id=377, 546.54187pt x 380.92313pt>
+l.148 \begin{itemize}
+                      <./immagini/processo a 5 stati.jpg> <./immagini/5StatiCod
+e2.png>]
+<immagini/7State.png, id=400, 881.2925pt x 504.88625pt>
+File: immagini/7State.png Graphic file (type png)
+<use immagini/7State.png>
+Package pdftex.def Info: immagini/7State.png  used on input line 154.
+(pdftex.def)             Requested size: 226.48395pt x 129.74965pt.
+<immagini/ControlTable.png, id=402, 546.54187pt x 380.92313pt>
 File: immagini/ControlTable.png Graphic file (type png)
 <use immagini/ControlTable.png>
-Package pdftex.def Info: immagini/ControlTable.png  used on input line 209.
+Package pdftex.def Info: immagini/ControlTable.png  used on input line 170.
 (pdftex.def)             Requested size: 226.48395pt x 157.85345pt.
 
 
@@ -522,15 +531,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.226     \item s
-                 e il dispositivo é disponibile o giá assegnato
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.226     \item s
+l.187     \item s
                  e il dispositivo é disponibile o giá assegnato <./immagini/7
-State.png> <./immagini/ControlTable.png>]
+State.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -539,8 +542,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[8]
-Overfull \hbox (26.39934pt too wide) in paragraph at lines 275--276
+[8
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.215     \item C
+                 ontrollo <./immagini/ControlTable.png>]
+Overfull \hbox (26.39934pt too wide) in paragraph at lines 236--237
 []\OT1/cmr/m/n/10.95 Comunicazione tra pro-cessi: in-for-mazioni per la co-mu-n
 i-cazione tra pro-cessi flag,segnali,messaggi 
  []
@@ -563,33 +572,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [10]
-main.tex:370: Undefined control sequence.
-l.370 \subsubsubsection
-                       {Kernel non é un processo}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-main.tex:372: Undefined control sequence.
-l.372 \subsubsubsection
-                       {Esecuzione all'interno dei processi utenti}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-main.tex:375: Undefined control sequence.
-l.375 \subsubsubsection
-                       {Sistema Basato su processi}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -599,14 +581,40 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [11]
-<immagini/transizioneTraStatiDeiProcessi.png, id=412, 583.42969pt x 374.14781pt
+Processi.tex:331: Undefined control sequence.
+l.331 \subsubsubsection
+                       {Kernel non é un processo}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Processi.tex:333: Undefined control sequence.
+l.333 \subsubsubsection
+                       {Esecuzione all'interno dei processi utenti}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Processi.tex:336: Undefined control sequence.
+l.336 \subsubsubsection
+                       {Sistema Basato su processi}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<immagini/transizioneTraStatiDeiProcessi.png, id=437, 583.42969pt x 374.14781pt
 >
 File: immagini/transizioneTraStatiDeiProcessi.png Graphic file (type png)
 <use immagini/transizioneTraStatiDeiProcessi.png>
 Package pdftex.def Info: immagini/transizioneTraStatiDeiProcessi.png  used on i
-nput line 383.
+nput line 344.
 (pdftex.def)             Requested size: 339.72592pt x 217.86794pt.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -620,21 +628,21 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.399 \subsection{Immagine del processo in Unix}
-                                                 <./immagini/transizioneTraStat
-iDeiProcessi.png>]
-main.tex:445: Missing $ inserted.
+l.358 \subsubsection{Transizione tra processi}
+                                               <./immagini/transizioneTraStatiD
+eiProcessi.png>]
+Processi.tex:406: Missing $ inserted.
 <inserted text> 
                 $
-l.445         P_
+l.406         P_
                 Links & Puntatori per le code di processi(LinkedList), \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-main.tex:445: Extra }, or forgotten $.
+Processi.tex:406: Extra }, or forgotten $.
 <template> \unskip \hfil }
                           \hskip \tabcolsep \hskip -.5\arrayrulewidth \vrule...
-l.445         P_Links &
+l.406         P_Links &
                         Puntatori per le code di processi(LinkedList), \\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -642,18 +650,18 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-main.tex:445: Missing $ inserted.
+Processi.tex:406: Missing $ inserted.
 <inserted text> 
                 $
-l.445         P_Links &
+l.406         P_Links &
                         Puntatori per le code di processi(LinkedList), \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-main.tex:445: Missing } inserted.
+Processi.tex:406: Missing } inserted.
 <inserted text> 
                 }
-l.445         P_Links &
+l.406         P_Links &
                         Puntatori per le code di processi(LinkedList), \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -661,11 +669,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-<immagini/thread1.png, id=419, 539.76656pt x 302.63063pt>
-File: immagini/thread1.png Graphic file (type png)
-<use immagini/thread1.png>
-Package pdftex.def Info: immagini/thread1.png  used on input line 464.
-(pdftex.def)             Requested size: 226.48395pt x 126.98393pt.
+) (Thread.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -674,18 +678,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[13
-pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
- been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.466 \end{figure}
-                  ]
-<immagini/ULTeKLT.png, id=439, 529.22719pt x 239.39438pt>
-File: immagini/ULTeKLT.png Graphic file (type png)
-<use immagini/ULTeKLT.png>
-Package pdftex.def Info: immagini/ULTeKLT.png  used on input line 483.
-(pdftex.def)             Requested size: 226.48395pt x 102.44809pt.
+[13]
+<immagini/thread1.png, id=460, 539.76656pt x 302.63063pt>
+File: immagini/thread1.png Graphic file (type png)
+<use immagini/thread1.png>
+Package pdftex.def Info: immagini/thread1.png  used on input line 12.
+(pdftex.def)             Requested size: 226.48395pt x 126.98393pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -696,12 +694,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [14
+pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.22 \subsection{ULT e KLT}
+                           
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.486 p
-       erché usare ULT: <./immagini/thread1.png>]
+l.22 \subsection{ULT e KLT}
+                            <./immagini/thread1.png>]
+<immagini/ULTeKLT.png, id=470, 529.22719pt x 239.39438pt>
+File: immagini/ULTeKLT.png Graphic file (type png)
+<use immagini/ULTeKLT.png>
+Package pdftex.def Info: immagini/ULTeKLT.png  used on input line 31.
+(pdftex.def)             Requested size: 226.48395pt x 102.44809pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -715,8 +725,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.517 
-       <./immagini/ULTeKLT.png>]
+l.55 Q
+      uindi, in sostanza, possiamo dire che thread e processi leggeri sono l...
+ <./immagini/ULTeKLT.png>]) (Scheduling.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -728,13 +739,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [16]
 File: immagini/7State.png Graphic file (type png)
 <use immagini/7State.png>
-Package pdftex.def Info: immagini/7State.png  used on input line 561.
+Package pdftex.def Info: immagini/7State.png  used on input line 24.
 (pdftex.def)             Requested size: 226.48395pt x 129.74965pt.
-<immagini/implementazioneScheduling.png, id=460, 762.85pt x 472.76625pt>
+<immagini/implementazioneScheduling.png, id=485, 762.85pt x 472.76625pt>
 File: immagini/implementazioneScheduling.png Graphic file (type png)
 <use immagini/implementazioneScheduling.png>
 Package pdftex.def Info: immagini/implementazioneScheduling.png  used on input 
-line 570.
+line 33.
 (pdftex.def)             Requested size: 226.48395pt x 140.35934pt.
 
 
@@ -750,14 +761,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.584 
-      
-pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.584 
-       <./immagini/implementazioneScheduling.png>]
+l.36     l
+          o scheduling fa una distinzione tra processi interattivi e process...
+]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -766,7 +772,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[18]
+[18
+pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.69         \item i
+                    nterruzzioni di I/O <./immagini/implementazioneScheduling.p
+ng>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -776,11 +789,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [19]
-<immagini/PoliticheDiScheduling.png, id=477, 685.56125pt x 534.99875pt>
+<immagini/PoliticheDiScheduling.png, id=502, 685.56125pt x 534.99875pt>
 File: immagini/PoliticheDiScheduling.png Graphic file (type png)
 <use immagini/PoliticheDiScheduling.png>
 Package pdftex.def Info: immagini/PoliticheDiScheduling.png  used on input line
- 677.
+ 140.
 (pdftex.def)             Requested size: 452.9679pt x 353.50026pt.
 
 
@@ -791,20 +804,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[20
-pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.682     \subsection{Selection Function}
-                                          <./immagini/PoliticheDiScheduling.png
->]
-<immagini/FCFS.png, id=484, 725.71124pt x 167.62625pt>
-File: immagini/FCFS.png Graphic file (type png)
-<use immagini/FCFS.png>
-Package pdftex.def Info: immagini/FCFS.png  used on input line 727.
-(pdftex.def)             Requested size: 339.72592pt x 78.47229pt.
-
+[20]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -813,18 +813,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[21]
-<immagini/RoundRobin.png, id=489, 745.78625pt x 185.69376pt>
+[21
+pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.162     P
+           re-emptive: Il sistema operativo puó interrompere un processo in...
+ <./immagini/PoliticheDiScheduling.png>]
+<immagini/FCFS.png, id=513, 725.71124pt x 167.62625pt>
+File: immagini/FCFS.png Graphic file (type png)
+<use immagini/FCFS.png>
+Package pdftex.def Info: immagini/FCFS.png  used on input line 190.
+(pdftex.def)             Requested size: 339.72592pt x 78.47229pt.
+<immagini/RoundRobin.png, id=514, 745.78625pt x 185.69376pt>
 File: immagini/RoundRobin.png Graphic file (type png)
 <use immagini/RoundRobin.png>
-Package pdftex.def Info: immagini/RoundRobin.png  used on input line 756.
+Package pdftex.def Info: immagini/RoundRobin.png  used on input line 219.
 (pdftex.def)             Requested size: 339.72592pt x 84.58713pt.
-<immagini/Quanto di tempo Giusto.png, id=490, 348.30125pt x 352.31625pt>
-File: immagini/Quanto di tempo Giusto.png Graphic file (type png)
-<use immagini/Quanto di tempo Giusto.png>
-Package pdftex.def Info: immagini/Quanto di tempo Giusto.png  used on input lin
-e 767.
-(pdftex.def)             Requested size: 339.72592pt x 343.66017pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -839,28 +845,21 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.770     S
-           e invece uno sceglie il quanto di tempo piú piccolo, il processo...
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.770     S
-           e invece uno sceglie il quanto di tempo piú piccolo, il processo...
- <./immagini/FCFS.png> <./immagini/RoundRobin.png>]
-<immagini/Quanto piú piccolo.png, id=499, 562.1pt x 277.035pt>
+l.222     i
+           n questo caso il processo E finisce prima rispetto all'algoritmo ...
+ <./immagini/FCFS.png>]
+<immagini/Quanto di tempo Giusto.png, id=521, 348.30125pt x 352.31625pt>
+File: immagini/Quanto di tempo Giusto.png Graphic file (type png)
+<use immagini/Quanto di tempo Giusto.png>
+Package pdftex.def Info: immagini/Quanto di tempo Giusto.png  used on input lin
+e 230.
+(pdftex.def)             Requested size: 339.72592pt x 343.66017pt.
+<immagini/Quanto piú piccolo.png, id=522, 562.1pt x 277.035pt>
 File: immagini/Quanto piú piccolo.png Graphic file (type png)
 <use immagini/Quanto piú piccolo.png>
-Package pdftex.def Info: immagini/Quanto piú piccolo.png  used on input line 7
-74.
+Package pdftex.def Info: immagini/Quanto piú piccolo.png  used on input line 2
+37.
 (pdftex.def)             Requested size: 339.72592pt x 167.43549pt.
-<immagini/RoundRobinVirtuale.png, id=500, 483.8075pt x 496.85625pt>
-File: immagini/RoundRobinVirtuale.png Graphic file (type png)
-<use immagini/RoundRobinVirtuale.png>
-Package pdftex.def Info: immagini/RoundRobinVirtuale.png  used on input line 79
-1.
-(pdftex.def)             Requested size: 339.72592pt x 348.90388pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -871,23 +870,30 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [23
+pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.240     N
+           el momento in cui si sceglie di usare il round robin, si fa una a...
+
 pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.795 
-      
-pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.795 
-       <./immagini/Quanto di tempo Giusto.png> <./immagini/Quanto piú piccolo.
-png>]
-<immagini/SPN.png, id=509, 778.91pt x 145.54375pt>
+l.240     N
+           el momento in cui si sceglie di usare il round robin, si fa una a...
+ <./immagini/RoundRobin.png> <./immagini/Quanto di tempo Giusto.png>]
+<immagini/RoundRobinVirtuale.png, id=531, 483.8075pt x 496.85625pt>
+File: immagini/RoundRobinVirtuale.png Graphic file (type png)
+<use immagini/RoundRobinVirtuale.png>
+Package pdftex.def Info: immagini/RoundRobinVirtuale.png  used on input line 25
+4.
+(pdftex.def)             Requested size: 339.72592pt x 348.90388pt.
+<immagini/SPN.png, id=532, 778.91pt x 145.54375pt>
 File: immagini/SPN.png Graphic file (type png)
 <use immagini/SPN.png>
-Package pdftex.def Info: immagini/SPN.png  used on input line 802.
+Package pdftex.def Info: immagini/SPN.png  used on input line 265.
 (pdftex.def)             Requested size: 339.72592pt x 63.47978pt.
 
 
@@ -899,75 +905,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [24
-pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
+pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.805     I
-           l problema é quello di dover dare una stima del tempo di esecuzi...
- <./immagini/RoundRobinVirtuale.png>]
-main.tex:815: Double subscript.
-l.815     S_n_
-              +_1 = \frac{1}{n} \sum_{i=1}^{n} T_i\label{eq:Media dei tempi ...
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-main.tex:815: Double subscript.
-l.815     S_n_+_
-                1 = \frac{1}{n} \sum_{i=1}^{n} T_i\label{eq:Media dei tempi ...
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-main.tex:821: Double subscript.
-l.821         S_n_
-                  +_1 = \frac{1}{n}T_n + \frac{n-1}{n}S_n\label{eq:Mi ricord...
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-main.tex:821: Double subscript.
-l.821         S_n_+_
-                    1 = \frac{1}{n}T_n + \frac{n-1}{n}S_n\label{eq:Mi ricord...
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-main.tex:825: Double subscript.
-l.825         S_n_
-                  +_1 = \alpha T_n + (1-\alpha)S_n\label{eq:formula con $\al...
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-main.tex:825: Double subscript.
-l.825         S_n_+_
-                    1 = \alpha T_n + (1-\alpha)S_n\label{eq:formula con $\al...
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-main.tex:829: Double subscript.
-l.829         S_n_
-                  +_1 = \alpha T_n + ... + (1-\alpha)^iT_n_-_i +...+ (1-\alp...
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-main.tex:829: Double subscript.
-l.829         S_n_+_
-                    1 = \alpha T_n + ... + (1-\alpha)^iT_n_-_i +...+ (1-\alp...
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-main.tex:829: Double subscript.
-l.829 ...+_1 = \alpha T_n + ... + (1-\alpha)^iT_n_
-                                                  -_i +...+ (1-\alpha)^nS_1\...
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-main.tex:829: Double subscript.
-l.829 ...1 = \alpha T_n + ... + (1-\alpha)^iT_n_-_
-                                                  i +...+ (1-\alpha)^nS_1\la...
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-<immagini/AnalisiDiAlphaSpn.png, id=516, 804.00375pt x 470.75874pt>
-File: immagini/AnalisiDiAlphaSpn.png Graphic file (type png)
-<use immagini/AnalisiDiAlphaSpn.png>
-Package pdftex.def Info: immagini/AnalisiDiAlphaSpn.png  used on input line 833
-.
-(pdftex.def)             Requested size: 339.72592pt x 198.90973pt.
-<immagini/EsempioExponentialAveraging.png, id=517, 760.8425pt x 478.78876pt>
-File: immagini/EsempioExponentialAveraging.png Graphic file (type png)
-<use immagini/EsempioExponentialAveraging.png>
-Package pdftex.def Info: immagini/EsempioExponentialAveraging.png  used on inpu
-t line 841.
-(pdftex.def)             Requested size: 339.72592pt x 213.78725pt.
+l.277     \begin{equation}
+                          
+pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.277     \begin{equation}
+                           <./immagini/Quanto piú piccolo.png> <./immagini/SPN
+.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -977,20 +927,74 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [25
-pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) h
+pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.844     A
-           bbiamo fissato un processo e diciamo che la sua prima istanza cre...
- <./immagini/SPN.png>]
-<immagini/EsempioExponentialAveraging2.png, id=532, 756.8275pt x 495.8525pt>
-File: immagini/EsempioExponentialAveraging2.png Graphic file (type png)
-<use immagini/EsempioExponentialAveraging2.png>
-Package pdftex.def Info: immagini/EsempioExponentialAveraging2.png  used on inp
-ut line 849.
-(pdftex.def)             Requested size: 339.72592pt x 222.57924pt.
+l.277     \begin{equation}
+                           <./immagini/RoundRobinVirtuale.png>]
+Scheduling.tex:278: Double subscript.
+l.278     S_n_
+              +_1 = \frac{1}{n} \sum_{i=1}^{n} T_i\label{eq:Media dei tempi ...
+I treat `x_1_2' essentially like `x_1{}_2'.
 
+Scheduling.tex:278: Double subscript.
+l.278     S_n_+_
+                1 = \frac{1}{n} \sum_{i=1}^{n} T_i\label{eq:Media dei tempi ...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+Scheduling.tex:284: Double subscript.
+l.284         S_n_
+                  +_1 = \frac{1}{n}T_n + \frac{n-1}{n}S_n\label{eq:Mi ricord...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+Scheduling.tex:284: Double subscript.
+l.284         S_n_+_
+                    1 = \frac{1}{n}T_n + \frac{n-1}{n}S_n\label{eq:Mi ricord...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+Scheduling.tex:288: Double subscript.
+l.288         S_n_
+                  +_1 = \alpha T_n + (1-\alpha)S_n\label{eq:formula con $\al...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+Scheduling.tex:288: Double subscript.
+l.288         S_n_+_
+                    1 = \alpha T_n + (1-\alpha)S_n\label{eq:formula con $\al...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+Scheduling.tex:292: Double subscript.
+l.292         S_n_
+                  +_1 = \alpha T_n + ... + (1-\alpha)^iT_n_-_i +...+ (1-\alp...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+Scheduling.tex:292: Double subscript.
+l.292         S_n_+_
+                    1 = \alpha T_n + ... + (1-\alpha)^iT_n_-_i +...+ (1-\alp...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+Scheduling.tex:292: Double subscript.
+l.292 ...+_1 = \alpha T_n + ... + (1-\alpha)^iT_n_
+                                                  -_i +...+ (1-\alpha)^nS_1\...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+Scheduling.tex:292: Double subscript.
+l.292 ...1 = \alpha T_n + ... + (1-\alpha)^iT_n_-_
+                                                  i +...+ (1-\alpha)^nS_1\la...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+<immagini/AnalisiDiAlphaSpn.png, id=548, 804.00375pt x 470.75874pt>
+File: immagini/AnalisiDiAlphaSpn.png Graphic file (type png)
+<use immagini/AnalisiDiAlphaSpn.png>
+Package pdftex.def Info: immagini/AnalisiDiAlphaSpn.png  used on input line 296
+.
+(pdftex.def)             Requested size: 339.72592pt x 198.90973pt.
+<immagini/EsempioExponentialAveraging.png, id=549, 760.8425pt x 478.78876pt>
+File: immagini/EsempioExponentialAveraging.png Graphic file (type png)
+<use immagini/EsempioExponentialAveraging.png>
+Package pdftex.def Info: immagini/EsempioExponentialAveraging.png  used on inpu
+t line 304.
+(pdftex.def)             Requested size: 339.72592pt x 213.78725pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1004,36 +1008,20 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.852     P
-           raticamente dopo un certo tempo, i valori vecchi vengono dimentic...
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.852     P
-           raticamente dopo un certo tempo, i valori vecchi vengono dimentic...
- <./immagini/AnalisiDiAlphaSpn.png> <./immagini/EsempioExponentialAveraging.png
->]
-<immagini/SRT.png, id=541, 814.04124pt x 165.61874pt>
+l.307     A
+           bbiamo fissato un processo e diciamo che la sua prima istanza cre...
+ <./immagini/AnalisiDiAlphaSpn.png>]
+<immagini/EsempioExponentialAveraging2.png, id=563, 756.8275pt x 495.8525pt>
+File: immagini/EsempioExponentialAveraging2.png Graphic file (type png)
+<use immagini/EsempioExponentialAveraging2.png>
+Package pdftex.def Info: immagini/EsempioExponentialAveraging2.png  used on inp
+ut line 312.
+(pdftex.def)             Requested size: 339.72592pt x 222.57924pt.
+<immagini/SRT.png, id=564, 814.04124pt x 165.61874pt>
 File: immagini/SRT.png Graphic file (type png)
 <use immagini/SRT.png>
-Package pdftex.def Info: immagini/SRT.png  used on input line 859.
+Package pdftex.def Info: immagini/SRT.png  used on input line 322.
 (pdftex.def)             Requested size: 339.72592pt x 69.11714pt.
-<immagini/HRRN.png, id=542, 771.88374pt x 124.465pt>
-File: immagini/HRRN.png Graphic file (type png)
-<use immagini/HRRN.png>
-Package pdftex.def Info: immagini/HRRN.png  used on input line 875.
-(pdftex.def)             Requested size: 339.72592pt x 54.77995pt.
-
-main.tex:878: Undefined control sequence.
-l.878     \subsectioni
-                      *
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1044,26 +1032,40 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [27
+pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.324     \end{figure}
+                      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.19}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.878     \subsectioni*
-                       
-pdfTeX warning (ext4): destination with the same identifier (name{figure.20}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.878     \subsectioni*
-                        <./immagini/EsempioExponentialAveraging2.png> <./immagi
-ni/SRT.png>]
-<immagini/RiassuntoScheduling.png, id=552, 567.11874pt x 586.19pt>
+l.324     \end{figure}
+                       <./immagini/EsempioExponentialAveraging.png> <./immagini
+/EsempioExponentialAveraging2.png>]
+<immagini/HRRN.png, id=573, 771.88374pt x 124.465pt>
+File: immagini/HRRN.png Graphic file (type png)
+<use immagini/HRRN.png>
+Package pdftex.def Info: immagini/HRRN.png  used on input line 338.
+(pdftex.def)             Requested size: 339.72592pt x 54.77995pt.
+
+Scheduling.tex:341: Undefined control sequence.
+l.341     \subsectioni
+                      *{Diagramma Riassuntivo}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<immagini/RiassuntoScheduling.png, id=574, 567.11874pt x 586.19pt>
 File: immagini/RiassuntoScheduling.png Graphic file (type png)
 <use immagini/RiassuntoScheduling.png>
-Package pdftex.def Info: immagini/RiassuntoScheduling.png  used on input line 8
-81.
+Package pdftex.def Info: immagini/RiassuntoScheduling.png  used on input line 3
+44.
 (pdftex.def)             Requested size: 339.72592pt x 351.16216pt.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1073,24 +1075,665 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [28
+pdfTeX warning (ext4): destination with the same identifier (name{figure.20}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.347     \subsection{Scheduling in Unix}
+                                         
 pdfTeX warning (ext4): destination with the same identifier (name{figure.21}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.884 \end{document}
-                    
+l.347     \subsection{Scheduling in Unix}
+                                          <./immagini/SRT.png> <./immagini/HRRN
+.png>]
+Scheduling.tex:371: Missing $ inserted.
+<inserted text> 
+                $
+l.371         dietro di nice_
+                             j é la capacitá di un processo di auto-declas...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 371.
+
+Scheduling.tex:371: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.371         dietro di nice_j é
+                                  la capacitá di un processo di auto-declas...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 371.
+
+Scheduling.tex:371: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.371         dietro di nice_j é la capacitá
+                                               di un processo di auto-declas...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 371.
+
+Scheduling.tex:371: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.371 ...á di un processo di auto-declassarsi, é
+                                                   usata  nei processi di si...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+Scheduling.tex:372: LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.372         \item
+                    \textbf{CPU\_j(i)} É una misuta di quanto il processo j...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Scheduling.tex:372: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.372         \item \textbf
+                           {CPU\_j(i)} É una misuta di quanto il processo j...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Scheduling.tex:372: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.372         \item \textbf
+                           {CPU\_j(i)} É una misuta di quanto il processo j...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 372.
+
+Scheduling.tex:372: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.372         \item \textbf{CPU\_j(i)} É
+                                          una misuta di quanto il processo j...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+Scheduling.tex:374: LaTeX Error: Command \end{itemize} invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.374     \end{itemize}
+                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Scheduling.tex:374: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.374     \end{itemize}
+                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Scheduling.tex:374: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.374     \end{itemize}
+                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Scheduling.tex:374: Missing $ inserted.
+<inserted text> 
+                $
+l.374     \end{itemize}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (613.32118pt too wide) in paragraph at lines 370--375
+\OT1/cmr/m/n/10.95 nice$[][]\OML/cmm/m/it/10.95 lacapacit[]diunprocessodiauto \
+OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 declassarsi; []usataneiprocessidisis
+tema:[][]unamisutadiquantoilprocessojhausatoilprocessorenell[]intervallii; cone
+xponentialaveragingdeitempipassati; inparticolarecon \OT1/cmr/m/n/10.95 =
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[29
 pdfTeX warning (ext4): destination with the same identifier (name{figure.22}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.884 \end{document}
-                     <./immagini/HRRN.png> <./immagini/RiassuntoScheduling.png>
-] (C:/Users\Axel\Desktop\universita\Sistemi Operativi\auxil\main.aux
-C:/Users\Axel\Desktop\universita\Sistemi Operativi\auxil\main.aux:90: Missing \
+l.375     \subsubsection*{Esempio}
+                                   <./immagini/RiassuntoScheduling.png>]
+<immagini/EsempioSchedulingUnix.png, id=592, 752.8125pt x 467.7475pt>
+File: immagini/EsempioSchedulingUnix.png Graphic file (type png)
+<use immagini/EsempioSchedulingUnix.png>
+Package pdftex.def Info: immagini/EsempioSchedulingUnix.png  used on input line
+ 378.
+(pdftex.def)             Requested size: 339.72592pt x 211.09108pt.
+
+Scheduling.tex:382: Missing $ inserted.
+<inserted text> 
+                $
+l.382 ...incia da 60 e poi bisogna aggiungere CPU_
+                                                  j che inizialmente é 0, c...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 382.
+
+Scheduling.tex:382: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.382 ...ogna aggiungere CPU_j che inizialmente é
+                                                   0, chi non é in esecuzio...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 382.
+
+Scheduling.tex:382: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.382 ...e CPU_j che inizialmente é 0, chi non é
+                                                   in esecuzione (B e C) non...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 383.
+
+Scheduling.tex:383: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.383     se il processo A é
+                              in esecuzione per un secondo, allora CPU_j = 3...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 384.
+
+Scheduling.tex:384: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.384     si calcola la nuova prioritá
+                                        (P_j) e si rimette in coda, dopo di ...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 384.
+
+Scheduling.tex:384: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.384 ...er controlla il processo con la prioritá
+                                                   piú alta,
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 384.
+
+Scheduling.tex:384: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.384 ...ntrolla il processo con la prioritá piú
+                                                   alta,
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 385.
+
+Scheduling.tex:385: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.385 ...o quando vengono ricalcolate le prioritá
+                                                  , la prioritá di A divent...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 385.
+
+Scheduling.tex:385: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.385 ...no ricalcolate le prioritá, la prioritá
+                                                   di A diventa 67 perché:
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 385.
+
+Scheduling.tex:385: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.385 ...tá, la prioritá di A diventa 67 perché
+                                                  :
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+Scheduling.tex:386: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.386     \begin{equation}
+                          
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Scheduling.tex:388: You can't use `\eqno' in math mode.
+\veqno ->\@kernel@eqno 
+                       \aftergroup \ignorespaces 
+l.388     \end{equation}
+                        
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+Scheduling.tex:388: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.388     \end{equation}
+                        
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Scheduling.tex:388: LaTeX Error: \begin{document} ended by \end{equation}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.388     \end{equation}
+                        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Scheduling.tex:388: Missing $ inserted.
+<inserted text> 
+                $
+l.388     \end{equation}
+                        
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Scheduling.tex:388: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.388     \end{equation}
+                        
+Things are pretty mixed up, but I think the worst is over.
+
+
+Overfull \hbox (525.65924pt too wide) in paragraph at lines 381--389
+\OT1/cmr/m/n/10.95 cesso A sia in es-e-cuzione quindi si com-in-cia da 60 e poi
+ bisogna ag-giun-gere CPU$[]\OML/cmm/m/it/10.95 cheinizialmente[]\OT1/cmr/m/n/1
+0.95 0\OML/cmm/m/it/10.95 ; chinon[]inesecuzione\OT1/cmr/m/n/10.95 (\OML/cmm/m/
+it/10.95 BeC\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 nonloincrementana; seilproc
+essoA[]inesecuzioneperunsecondo; alloraCPU[] \OT1/cmr/m/n/10.95 =
+ []
+
+
+Overfull \hbox (793.77643pt too wide) in paragraph at lines 381--389
+\OT1/cmr/m/n/10.95 30(\OML/cmm/m/it/10.95 applicarelaformula\OT1/cmr/m/n/10.95 
+)\OML/cmm/m/it/10.95 ; finitoiltempodiesecuzione; sicalcolalanuovapriorit[]\OT1
+/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 P[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 
+esirimetteincoda; dopodicheloschedulercontrollailprocessoconlapriorit[]pi[]alta
+; dopounsecondoquandovengonoricalcolatelepriorit[]; lapriorit[]diAdiventa\OT1/c
+mr/m/n/10.95 67\OML/cmm/m/it/10.95 perch[] \OT1/cmr/m/n/10.95 : [][][]\OML/cmm/
+m/it/10.95 CPU[]\OT1/cmr/m/n/10.95 (60) =
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[30
+pdfTeX warning (ext4): destination with the same identifier (name{figure.23}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.409     \subsubsection*{Assegnamento Dinamico}
+                                                 <./immagini/EsempioSchedulingU
+nix.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 432--433
+
+ []
+
+
+Overfull \hbox (29.43845pt too wide) in paragraph at lines 447--450
+\OT1/cmr/m/n/10.95 Gli unici ri-conosciuti come tali da Linux: Il loro codice s
+or-gente usa la sys-tem call \OT1/cmr/bx/n/10.95 sched[]setscheduler
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 456--460
+
+ []
+
+) (GestioneDellaMemoria.tex
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[32]
+<immagini/RilocazioneIndirizziNeiProgrammi.png, id=612, 677.53125pt x 518.93875
+pt>
+File: immagini/RilocazioneIndirizziNeiProgrammi.png Graphic file (type png)
+<use immagini/RilocazioneIndirizziNeiProgrammi.png>
+Package pdftex.def Info: immagini/RilocazioneIndirizziNeiProgrammi.png  used on
+ input line 28.
+(pdftex.def)             Requested size: 339.72592pt x 260.21306pt.
+<immagini/Indirizzi nei programmi.png, id=613, 677.53125pt x 382.42876pt>
+File: immagini/Indirizzi nei programmi.png Graphic file (type png)
+<use immagini/Indirizzi nei programmi.png>
+Package pdftex.def Info: immagini/Indirizzi nei programmi.png  used on input li
+ne 37.
+(pdftex.def)             Requested size: 339.72592pt x 191.76242pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[33
+pdfTeX warning (ext4): destination with the same identifier (name{figure.24}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.40     P
+          er capire come avviene la rilocazione dobbiamo prima precisare... ...
+ <./immagini/RilocazioneIndirizziNeiProgrammi.png>]
+<immagini/IndirizziInMemoria.png, id=621, 862.22125pt x 417.56pt>
+File: immagini/IndirizziInMemoria.png Graphic file (type png)
+<use immagini/IndirizziInMemoria.png>
+Package pdftex.def Info: immagini/IndirizziInMemoria.png  used on input line 47
+.
+(pdftex.def)             Requested size: 339.72592pt x 164.52342pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[34
+pdfTeX warning (ext4): destination with the same identifier (name{figure.25}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.60         \item \textbf
+                          {Indirizzi Fisici} : sono gli indirizzi reali, son...
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.26}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.60         \item \textbf
+                          {Indirizzi Fisici} : sono gli indirizzi reali, son...
+ <./immagini/Indirizzi nei programmi.png> <./immagini/IndirizziInMemoria.png>]
+<immagini/RilocazioneConHardware.png, id=630, 541.02126pt x 439.6425pt>
+File: immagini/RilocazioneConHardware.png Graphic file (type png)
+<use immagini/RilocazioneConHardware.png>
+Package pdftex.def Info: immagini/RilocazioneConHardware.png  used on input lin
+e 65.
+(pdftex.def)             Requested size: 339.72592pt x 276.0706pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--72
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[35
+pdfTeX warning (ext4): destination with the same identifier (name{figure.27}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.88     \subsubsection{Organizzazione Logica}
+                                               <./immagini/RilocazioneConHardwa
+re.png>]
+<immagini/partizionamento.png, id=638, 801.99625pt x 482.80376pt>
+File: immagini/partizionamento.png Graphic file (type png)
+<use immagini/partizionamento.png>
+Package pdftex.def Info: immagini/partizionamento.png  used on input line 126.
+(pdftex.def)             Requested size: 339.72592pt x 204.52217pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[36]
+<immagini/EsempioPartizionamentoDinamico.png, id=649, 200.75pt x 461.725pt>
+File: immagini/EsempioPartizionamentoDinamico.png Graphic file (type png)
+<use immagini/EsempioPartizionamentoDinamico.png>
+Package pdftex.def Info: immagini/EsempioPartizionamentoDinamico.png  used on i
+nput line 138.
+(pdftex.def)             Requested size: 339.72592pt x 781.484pt.
+
+
+LaTeX Warning: Float too large for page by 106.7063pt on input line 140.
+
+<immagini/EsempioPartizionamentoDinamico2.png, id=650, 191.71625pt x 461.725pt>
+
+File: immagini/EsempioPartizionamentoDinamico2.png Graphic file (type png)
+<use immagini/EsempioPartizionamentoDinamico2.png>
+Package pdftex.def Info: immagini/EsempioPartizionamentoDinamico2.png  used on 
+input line 147.
+(pdftex.def)             Requested size: 339.72592pt x 818.30298pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[37
+pdfTeX warning (ext4): destination with the same identifier (name{figure.28}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.150     q
+           uello che succede é che si lascia uno spazio vuoto di 6MB, p2 ch...
+ <./immagini/partizionamento.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[38
+pdfTeX warning (ext4): destination with the same identifier (name{figure.29}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.150     q
+           uello che succede é che si lascia uno spazio vuoto di 6MB, p2 ch...
+ <./immagini/EsempioPartizionamentoDinamico.png>]
+Overfull \vbox (143.52528pt too high) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[39
+pdfTeX warning (ext4): destination with the same identifier (name{figure.30}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.150     q
+           uello che succede é che si lascia uno spazio vuoto di 6MB, p2 ch...
+ <./immagini/EsempioPartizionamentoDinamico2.png>]
+<immagini/EsempioPartizionamentoDinamico3.png, id=671, 187.70125pt x 479.7925pt
+>
+File: immagini/EsempioPartizionamentoDinamico3.png Graphic file (type png)
+<use immagini/EsempioPartizionamentoDinamico3.png>
+Package pdftex.def Info: immagini/EsempioPartizionamentoDinamico3.png  used on 
+input line 155.
+(pdftex.def)             Requested size: 339.72592pt x 868.45036pt.
+
+
+LaTeX Warning: Float too large for page by 193.67267pt on input line 157.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
+
+ []
+
+<immagini/AlgoritmiPartizionamento.png, id=672, 464.73625pt x 455.7025pt>
+File: immagini/AlgoritmiPartizionamento.png Graphic file (type png)
+<use immagini/AlgoritmiPartizionamento.png>
+Package pdftex.def Info: immagini/AlgoritmiPartizionamento.png  used on input l
+ine 186.
+(pdftex.def)             Requested size: 339.72592pt x 333.13287pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[40]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[41
+pdfTeX warning (ext4): destination with the same identifier (name{figure.31}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.189 
+       <./immagini/EsempioPartizionamentoDinamico3.png>])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[42
+pdfTeX warning (ext4): destination with the same identifier (name{figure.32}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.46 \end{document}
+                    <./immagini/AlgoritmiPartizionamento.png>]
+(C:/Users\Axel\Desktop\universita\Sistemi Operativi\auxil\main.aux
+C:/Users\Axel\Desktop\universita\Sistemi Operativi\auxil\main.aux:91: Missing \
 endcsname inserted.
 <to be read again> 
                    \alpha 
-l.90 ... con $\alpha $}{{3}{25}{}{equation.3.3}{}}
+l.91 ... con $\alpha $}{{3}{26}{}{equation.3.3}{}}
                                                   
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
@@ -1104,17 +1747,23 @@ L3 programming layer <2024-01-04>
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3C842E81575F1D3865F682E0FE456BCE;11398.
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 1B2A9AA719A0D6C100134B132CD78A6A;12148
+(rerunfilecheck)             After:  F0EBCE3F3F8962443D0DB2DCFDF106B3;13757.
  ) 
 Here is how much of TeX's memory you used:
- 10557 strings out of 474486
- 164979 string characters out of 5753573
+ 10759 strings out of 474486
+ 171291 string characters out of 5753573
  1948542 words of memory out of 5000000
- 32580 multiletter control sequences out of 15000+600000
- 563874 words of font info for 56 fonts, out of 8000000 for 9000
+ 32719 multiletter control sequences out of 15000+600000
+ 564495 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,505b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,79p,524b,515s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Axel\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
 095.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/P
 rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files
@@ -1127,9 +1776,9 @@ les/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/pub
 lic/amsfonts/cm/cmsy8.pfb>
 Output written on "C:/Users\Axel\Desktop\universita\Sistemi Operativi\out\main.
-pdf" (28 pages, 1738220 bytes).
+pdf" (42 pages, 2296824 bytes).
 PDF statistics:
- 644 PDF objects out of 1000 (max. 8388607)
- 148 named destinations out of 1000 (max. 500000)
- 642 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 788 PDF objects out of 1000 (max. 8388607)
+ 197 named destinations out of 1000 (max. 500000)
+ 732 words of extra memory for PDF output out of 10000 (max. 10000000)
 
