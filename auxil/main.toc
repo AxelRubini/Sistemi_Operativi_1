@@ -89,3 +89,15 @@
 \contentsline {subsubsection}{\numberline {4.6.2}Supporto Hardware}{48}{subsubsection.4.6.2}%
 \contentsline {subsubsection}{\numberline {4.6.3}Translation Lookaside Buffer}{50}{subsubsection.4.6.3}%
 \contentsline {subsubsection}{\numberline {4.6.4}Dimensione delle pagine}{53}{subsubsection.4.6.4}%
+\contentsline {subsection}{\numberline {4.7}Segmentazione}{54}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}Segmentazione e Paginazione}{55}{subsection.4.8}%
+\contentsline {subsubsection}{\numberline {4.8.1}Protezione}{57}{subsubsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.9}Decisioni}{57}{subsection.4.9}%
+\contentsline {subsubsection}{\numberline {4.9.1}Fetch Policy}{58}{subsubsection.4.9.1}%
+\contentsline {subsubsection}{\numberline {4.9.2}Posizionamento}{58}{subsubsection.4.9.2}%
+\contentsline {subsubsection}{\numberline {4.9.3}Sostituzione}{58}{subsubsection.4.9.3}%
+\contentsline {subsubsection}{\numberline {4.9.4}Gestione del resident set}{59}{subsubsection.4.9.4}%
+\contentsline {subsubsection}{\numberline {4.9.5}Politica di Pulitura}{59}{subsubsection.4.9.5}%
+\contentsline {subsubsection}{\numberline {4.9.6}Controllo del Carico}{59}{subsubsection.4.9.6}%
+\contentsline {subsection}{\numberline {4.10}Algoritmi di Sostituzione}{61}{subsection.4.10}%
+\contentsline {subsection}{\numberline {4.11}Gestione della Memoria in Linux}{64}{subsection.4.11}%

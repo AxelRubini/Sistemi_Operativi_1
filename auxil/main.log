@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.15)  4 NOV 2024 23:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.15)  16 NOV 2024 00:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -494,13 +494,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [6]
-<immagini/processo a 5 stati.jpg, id=489, 513.92pt x 242.9075pt>
+<immagini/processo a 5 stati.jpg, id=549, 513.92pt x 242.9075pt>
 File: immagini/processo a 5 stati.jpg Graphic file (type jpg)
 <use immagini/processo a 5 stati.jpg>
 Package pdftex.def Info: immagini/processo a 5 stati.jpg  used on input line 12
 5.
 (pdftex.def)             Requested size: 226.48395pt x 107.05011pt.
-<immagini/5StatiCode2.png, id=490, 271.0125pt x 186.6975pt>
+<immagini/5StatiCode2.png, id=550, 271.0125pt x 186.6975pt>
 File: immagini/5StatiCode2.png Graphic file (type png)
 <use immagini/5StatiCode2.png>
 Package pdftex.def Info: immagini/5StatiCode2.png  used on input line 140.
@@ -528,12 +528,12 @@ s been already used, duplicate ignored
 l.148 \begin{itemize}
                       <./immagini/processo a 5 stati.jpg> <./immagini/5StatiCod
 e2.png>]
-<immagini/7State.png, id=500, 881.2925pt x 504.88625pt>
+<immagini/7State.png, id=560, 881.2925pt x 504.88625pt>
 File: immagini/7State.png Graphic file (type png)
 <use immagini/7State.png>
 Package pdftex.def Info: immagini/7State.png  used on input line 154.
 (pdftex.def)             Requested size: 226.48395pt x 129.74965pt.
-<immagini/ControlTable.png, id=502, 546.54187pt x 380.92313pt>
+<immagini/ControlTable.png, id=562, 546.54187pt x 380.92313pt>
 File: immagini/ControlTable.png Graphic file (type png)
 <use immagini/ControlTable.png>
 Package pdftex.def Info: immagini/ControlTable.png  used on input line 170.
@@ -629,7 +629,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<immagini/transizioneTraStatiDeiProcessi.png, id=536, 583.42969pt x 374.14781pt
+<immagini/transizioneTraStatiDeiProcessi.png, id=596, 583.42969pt x 374.14781pt
 >
 File: immagini/transizioneTraStatiDeiProcessi.png Graphic file (type png)
 <use immagini/transizioneTraStatiDeiProcessi.png>
@@ -700,7 +700,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [14]
-<immagini/thread1.png, id=559, 539.76656pt x 302.63063pt>
+<immagini/thread1.png, id=619, 539.76656pt x 302.63063pt>
 File: immagini/thread1.png Graphic file (type png)
 <use immagini/thread1.png>
 Package pdftex.def Info: immagini/thread1.png  used on input line 12.
@@ -727,7 +727,7 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.22 \subsection{ULT e KLT}
                             <./immagini/thread1.png>]
-<immagini/ULTeKLT.png, id=569, 529.22719pt x 239.39438pt>
+<immagini/ULTeKLT.png, id=629, 529.22719pt x 239.39438pt>
 File: immagini/ULTeKLT.png Graphic file (type png)
 <use immagini/ULTeKLT.png>
 Package pdftex.def Info: immagini/ULTeKLT.png  used on input line 31.
@@ -762,7 +762,7 @@ File: immagini/7State.png Graphic file (type png)
 <use immagini/7State.png>
 Package pdftex.def Info: immagini/7State.png  used on input line 24.
 (pdftex.def)             Requested size: 226.48395pt x 129.74965pt.
-<immagini/implementazioneScheduling.png, id=584, 762.85pt x 472.76625pt>
+<immagini/implementazioneScheduling.png, id=644, 762.85pt x 472.76625pt>
 File: immagini/implementazioneScheduling.png Graphic file (type png)
 <use immagini/implementazioneScheduling.png>
 Package pdftex.def Info: immagini/implementazioneScheduling.png  used on input 
@@ -810,7 +810,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [20]
-<immagini/PoliticheDiScheduling.png, id=601, 685.56125pt x 534.99875pt>
+<immagini/PoliticheDiScheduling.png, id=661, 685.56125pt x 534.99875pt>
 File: immagini/PoliticheDiScheduling.png Graphic file (type png)
 <use immagini/PoliticheDiScheduling.png>
 Package pdftex.def Info: immagini/PoliticheDiScheduling.png  used on input line
@@ -842,12 +842,12 @@ as been already used, duplicate ignored
 l.162     P
            re-emptive: Il sistema operativo puó interrompere un processo in...
  <./immagini/PoliticheDiScheduling.png>]
-<immagini/FCFS.png, id=612, 725.71124pt x 167.62625pt>
+<immagini/FCFS.png, id=672, 725.71124pt x 167.62625pt>
 File: immagini/FCFS.png Graphic file (type png)
 <use immagini/FCFS.png>
 Package pdftex.def Info: immagini/FCFS.png  used on input line 190.
 (pdftex.def)             Requested size: 339.72592pt x 78.47229pt.
-<immagini/RoundRobin.png, id=613, 745.78625pt x 185.69376pt>
+<immagini/RoundRobin.png, id=673, 745.78625pt x 185.69376pt>
 File: immagini/RoundRobin.png Graphic file (type png)
 <use immagini/RoundRobin.png>
 Package pdftex.def Info: immagini/RoundRobin.png  used on input line 219.
@@ -869,13 +869,13 @@ as been already used, duplicate ignored
 l.222     i
            n questo caso il processo E finisce prima rispetto all'algoritmo ...
  <./immagini/FCFS.png>]
-<immagini/Quanto di tempo Giusto.png, id=620, 348.30125pt x 352.31625pt>
+<immagini/Quanto di tempo Giusto.png, id=680, 348.30125pt x 352.31625pt>
 File: immagini/Quanto di tempo Giusto.png Graphic file (type png)
 <use immagini/Quanto di tempo Giusto.png>
 Package pdftex.def Info: immagini/Quanto di tempo Giusto.png  used on input lin
 e 230.
 (pdftex.def)             Requested size: 339.72592pt x 343.66017pt.
-<immagini/Quanto piú piccolo.png, id=621, 562.1pt x 277.035pt>
+<immagini/Quanto piú piccolo.png, id=681, 562.1pt x 277.035pt>
 File: immagini/Quanto piú piccolo.png Graphic file (type png)
 <use immagini/Quanto piú piccolo.png>
 Package pdftex.def Info: immagini/Quanto piú piccolo.png  used on input line 2
@@ -905,13 +905,13 @@ as been already used, duplicate ignored
 l.240     N
            el momento in cui si sceglie di usare il round robin, si fa una a...
  <./immagini/RoundRobin.png> <./immagini/Quanto di tempo Giusto.png>]
-<immagini/RoundRobinVirtuale.png, id=630, 483.8075pt x 496.85625pt>
+<immagini/RoundRobinVirtuale.png, id=690, 483.8075pt x 496.85625pt>
 File: immagini/RoundRobinVirtuale.png Graphic file (type png)
 <use immagini/RoundRobinVirtuale.png>
 Package pdftex.def Info: immagini/RoundRobinVirtuale.png  used on input line 25
 4.
 (pdftex.def)             Requested size: 339.72592pt x 348.90388pt.
-<immagini/SPN.png, id=631, 778.91pt x 145.54375pt>
+<immagini/SPN.png, id=691, 778.91pt x 145.54375pt>
 File: immagini/SPN.png Graphic file (type png)
 <use immagini/SPN.png>
 Package pdftex.def Info: immagini/SPN.png  used on input line 265.
@@ -1004,13 +1004,13 @@ l.292 ...1 = \alpha T_n + ... + (1-\alpha)^iT_n_-_
                                                   i +...+ (1-\alpha)^nS_1\la...
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-<immagini/AnalisiDiAlphaSpn.png, id=647, 804.00375pt x 470.75874pt>
+<immagini/AnalisiDiAlphaSpn.png, id=707, 804.00375pt x 470.75874pt>
 File: immagini/AnalisiDiAlphaSpn.png Graphic file (type png)
 <use immagini/AnalisiDiAlphaSpn.png>
 Package pdftex.def Info: immagini/AnalisiDiAlphaSpn.png  used on input line 296
 .
 (pdftex.def)             Requested size: 339.72592pt x 198.90973pt.
-<immagini/EsempioExponentialAveraging.png, id=648, 760.8425pt x 478.78876pt>
+<immagini/EsempioExponentialAveraging.png, id=708, 760.8425pt x 478.78876pt>
 File: immagini/EsempioExponentialAveraging.png Graphic file (type png)
 <use immagini/EsempioExponentialAveraging.png>
 Package pdftex.def Info: immagini/EsempioExponentialAveraging.png  used on inpu
@@ -1032,13 +1032,13 @@ as been already used, duplicate ignored
 l.307     A
            bbiamo fissato un processo e diciamo che la sua prima istanza cre...
  <./immagini/AnalisiDiAlphaSpn.png>]
-<immagini/EsempioExponentialAveraging2.png, id=662, 756.8275pt x 495.8525pt>
+<immagini/EsempioExponentialAveraging2.png, id=722, 756.8275pt x 495.8525pt>
 File: immagini/EsempioExponentialAveraging2.png Graphic file (type png)
 <use immagini/EsempioExponentialAveraging2.png>
 Package pdftex.def Info: immagini/EsempioExponentialAveraging2.png  used on inp
 ut line 312.
 (pdftex.def)             Requested size: 339.72592pt x 222.57924pt.
-<immagini/SRT.png, id=663, 814.04124pt x 165.61874pt>
+<immagini/SRT.png, id=723, 814.04124pt x 165.61874pt>
 File: immagini/SRT.png Graphic file (type png)
 <use immagini/SRT.png>
 Package pdftex.def Info: immagini/SRT.png  used on input line 322.
@@ -1066,7 +1066,7 @@ as been already used, duplicate ignored
 l.324     \end{figure}
                        <./immagini/EsempioExponentialAveraging.png> <./immagini
 /EsempioExponentialAveraging2.png>]
-<immagini/HRRN.png, id=672, 771.88374pt x 124.465pt>
+<immagini/HRRN.png, id=732, 771.88374pt x 124.465pt>
 File: immagini/HRRN.png Graphic file (type png)
 <use immagini/HRRN.png>
 Package pdftex.def Info: immagini/HRRN.png  used on input line 338.
@@ -1081,7 +1081,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<immagini/RiassuntoScheduling.png, id=673, 567.11874pt x 586.19pt>
+<immagini/RiassuntoScheduling.png, id=733, 567.11874pt x 586.19pt>
 File: immagini/RiassuntoScheduling.png Graphic file (type png)
 <use immagini/RiassuntoScheduling.png>
 Package pdftex.def Info: immagini/RiassuntoScheduling.png  used on input line 3
@@ -1270,7 +1270,7 @@ as been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.375     \subsubsection*{Esempio}
                                    <./immagini/RiassuntoScheduling.png>]
-<immagini/EsempioSchedulingUnix.png, id=691, 752.8125pt x 467.7475pt>
+<immagini/EsempioSchedulingUnix.png, id=751, 752.8125pt x 467.7475pt>
 File: immagini/EsempioSchedulingUnix.png Graphic file (type png)
 <use immagini/EsempioSchedulingUnix.png>
 Package pdftex.def Info: immagini/EsempioSchedulingUnix.png  used on input line
@@ -1518,14 +1518,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [33]
-<immagini/RilocazioneIndirizziNeiProgrammi.png, id=711, 677.53125pt x 518.93875
+<immagini/RilocazioneIndirizziNeiProgrammi.png, id=771, 677.53125pt x 518.93875
 pt>
 File: immagini/RilocazioneIndirizziNeiProgrammi.png Graphic file (type png)
 <use immagini/RilocazioneIndirizziNeiProgrammi.png>
 Package pdftex.def Info: immagini/RilocazioneIndirizziNeiProgrammi.png  used on
  input line 28.
 (pdftex.def)             Requested size: 339.72592pt x 260.21306pt.
-<immagini/Indirizzi nei programmi.png, id=712, 677.53125pt x 382.42876pt>
+<immagini/Indirizzi nei programmi.png, id=772, 677.53125pt x 382.42876pt>
 File: immagini/Indirizzi nei programmi.png Graphic file (type png)
 <use immagini/Indirizzi nei programmi.png>
 Package pdftex.def Info: immagini/Indirizzi nei programmi.png  used on input li
@@ -1548,7 +1548,7 @@ as been already used, duplicate ignored
 l.40     P
           er capire come avviene la rilocazione dobbiamo prima precisare... ...
  <./immagini/RilocazioneIndirizziNeiProgrammi.png>]
-<immagini/IndirizziInMemoria.png, id=719, 862.22125pt x 417.56pt>
+<immagini/IndirizziInMemoria.png, id=779, 862.22125pt x 417.56pt>
 File: immagini/IndirizziInMemoria.png Graphic file (type png)
 <use immagini/IndirizziInMemoria.png>
 Package pdftex.def Info: immagini/IndirizziInMemoria.png  used on input line 47
@@ -1578,7 +1578,7 @@ as been already used, duplicate ignored
 l.60         \item \textbf
                           {Indirizzi Fisici} : sono gli indirizzi reali, son...
  <./immagini/Indirizzi nei programmi.png> <./immagini/IndirizziInMemoria.png>]
-<immagini/RilocazioneConHardware.png, id=728, 541.02126pt x 439.6425pt>
+<immagini/RilocazioneConHardware.png, id=788, 541.02126pt x 439.6425pt>
 File: immagini/RilocazioneConHardware.png Graphic file (type png)
 <use immagini/RilocazioneConHardware.png>
 Package pdftex.def Info: immagini/RilocazioneConHardware.png  used on input lin
@@ -1605,7 +1605,7 @@ as been already used, duplicate ignored
 l.88     \subsubsection{Organizzazione Logica}
                                                <./immagini/RilocazioneConHardwa
 re.png>]
-<immagini/partizionamento.png, id=735, 801.99625pt x 482.80376pt>
+<immagini/partizionamento.png, id=795, 801.99625pt x 482.80376pt>
 File: immagini/partizionamento.png Graphic file (type png)
 <use immagini/partizionamento.png>
 Package pdftex.def Info: immagini/partizionamento.png  used on input line 126.
@@ -1620,7 +1620,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [37]
-<immagini/EsempioPartizionamentoDinamico.png, id=741, 200.75pt x 461.725pt>
+<immagini/EsempioPartizionamentoDinamico.png, id=801, 200.75pt x 461.725pt>
 File: immagini/EsempioPartizionamentoDinamico.png Graphic file (type png)
 <use immagini/EsempioPartizionamentoDinamico.png>
 Package pdftex.def Info: immagini/EsempioPartizionamentoDinamico.png  used on i
@@ -1643,14 +1643,14 @@ as been already used, duplicate ignored
 l.141     S
            upponiamo che arrivino in sequenza tre processi, p1=20MB, p2=14MB...
  <./immagini/partizionamento.png>]
-<immagini/EsempioPartizionamentoDinamico2.png, id=748, 191.71625pt x 461.725pt>
+<immagini/EsempioPartizionamentoDinamico2.png, id=808, 191.71625pt x 461.725pt>
 
 File: immagini/EsempioPartizionamentoDinamico2.png Graphic file (type png)
 <use immagini/EsempioPartizionamentoDinamico2.png>
 Package pdftex.def Info: immagini/EsempioPartizionamentoDinamico2.png  used on 
 input line 147.
 (pdftex.def)             Requested size: 113.24197pt x 272.73244pt.
-<immagini/EsempioPartizionamentoDinamico3.png, id=749, 187.70125pt x 479.7925pt
+<immagini/EsempioPartizionamentoDinamico3.png, id=809, 187.70125pt x 479.7925pt
 >
 File: immagini/EsempioPartizionamentoDinamico3.png Graphic file (type png)
 <use immagini/EsempioPartizionamentoDinamico3.png>
@@ -1700,7 +1700,7 @@ as been already used, duplicate ignored
 l.177         \item t
                      ende a riempire solo la prima parte della memoria <./immag
 ini/EsempioPartizionamentoDinamico3.png>]
-<immagini/AlgoritmiPartizionamento.png, id=765, 464.73625pt x 455.7025pt>
+<immagini/AlgoritmiPartizionamento.png, id=825, 464.73625pt x 455.7025pt>
 File: immagini/AlgoritmiPartizionamento.png Graphic file (type png)
 <use immagini/AlgoritmiPartizionamento.png>
 Package pdftex.def Info: immagini/AlgoritmiPartizionamento.png  used on input l
@@ -1806,7 +1806,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 190--199
 
  []
 
-<immagini/BuddySystem1.png, id=766, 779.91376pt x 459.7175pt>
+<immagini/BuddySystem1.png, id=826, 779.91376pt x 459.7175pt>
 File: immagini/BuddySystem1.png Graphic file (type png)
 <use immagini/BuddySystem1.png>
 Package pdftex.def Info: immagini/BuddySystem1.png  used on input line 212.
@@ -1826,7 +1826,7 @@ as been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.214     \end{figure}
                        <./immagini/AlgoritmiPartizionamento.png>]
-<immagini/BuddySystemAlbero.png, id=777, 661.47125pt x 471.7625pt>
+<immagini/BuddySystemAlbero.png, id=837, 661.47125pt x 471.7625pt>
 File: immagini/BuddySystemAlbero.png Graphic file (type png)
 <use immagini/BuddySystemAlbero.png>
 Package pdftex.def Info: immagini/BuddySystemAlbero.png  used on input line 220
@@ -1855,19 +1855,19 @@ as been already used, duplicate ignored
 l.233     \subsubsection*{Esempio}
                                    <./immagini/BuddySystem1.png> <./immagini/Bu
 ddySystemAlbero.png>]
-<immagini/PaginazioneEsempio1.png, id=786, 381.425pt x 471.7625pt>
+<immagini/PaginazioneEsempio1.png, id=846, 381.425pt x 471.7625pt>
 File: immagini/PaginazioneEsempio1.png Graphic file (type png)
 <use immagini/PaginazioneEsempio1.png>
 Package pdftex.def Info: immagini/PaginazioneEsempio1.png  used on input line 2
 40.
 (pdftex.def)             Requested size: 226.48395pt x 280.12268pt.
-<immagini/PaginazioneEsempio1and2.png, id=787, 381.425pt x 499.8675pt>
+<immagini/PaginazioneEsempio1and2.png, id=847, 381.425pt x 499.8675pt>
 File: immagini/PaginazioneEsempio1and2.png Graphic file (type png)
 <use immagini/PaginazioneEsempio1and2.png>
 Package pdftex.def Info: immagini/PaginazioneEsempio1and2.png  used on input li
 ne 244.
 (pdftex.def)             Requested size: 226.48395pt x 296.81085pt.
-<immagini/PaginazioneEsempio2.png, id=788, 368.37625pt x 477.785pt>
+<immagini/PaginazioneEsempio2.png, id=848, 368.37625pt x 477.785pt>
 File: immagini/PaginazioneEsempio2.png Graphic file (type png)
 <use immagini/PaginazioneEsempio2.png>
 Package pdftex.def Info: immagini/PaginazioneEsempio2.png  used on input line 2
@@ -1883,7 +1883,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [43 <./immagini/PaginazioneEsempio1.png>]
-<immagini/PaginazioneEsempio3.png, id=795, 374.39874pt x 469.755pt>
+<immagini/PaginazioneEsempio3.png, id=855, 374.39874pt x 469.755pt>
 File: immagini/PaginazioneEsempio3.png Graphic file (type png)
 <use immagini/PaginazioneEsempio3.png>
 Package pdftex.def Info: immagini/PaginazioneEsempio3.png  used on input line 2
@@ -1900,7 +1900,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [44 <./immagini/PaginazioneEsempio1and2.png> <./immagini/PaginazioneEsempio2.pn
 g>]
-<immagini/PagineRisultanti.png, id=802, 814.04124pt x 205.76875pt>
+<immagini/PagineRisultanti.png, id=862, 814.04124pt x 205.76875pt>
 File: immagini/PagineRisultanti.png Graphic file (type png)
 <use immagini/PagineRisultanti.png>
 Package pdftex.def Info: immagini/PagineRisultanti.png  used on input line 257.
@@ -1922,7 +1922,7 @@ Overfull \hbox (1.18388pt too wide) in paragraph at lines 262--266
 i-videre il pro-cesso in seg-menti(Sorgenti,Dati,),
  []
 
-<immagini/IndirizziLogici1.png, id=803, 644.4075pt x 502.87875pt>
+<immagini/IndirizziLogici1.png, id=863, 644.4075pt x 502.87875pt>
 File: immagini/IndirizziLogici1.png Graphic file (type png)
 <use immagini/IndirizziLogici1.png>
 Package pdftex.def Info: immagini/IndirizziLogici1.png  used on input line 277.
@@ -1949,13 +1949,13 @@ l.284 ...eso pagine di dimensione \begin{math}2^1^
                                                   0\end{math}
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-<immagini/funzionamentopaginazione1.png, id=811, 788.9475pt x 438.63875pt>
+<immagini/funzionamentopaginazione1.png, id=871, 788.9475pt x 438.63875pt>
 File: immagini/funzionamentopaginazione1.png Graphic file (type png)
 <use immagini/funzionamentopaginazione1.png>
 Package pdftex.def Info: immagini/funzionamentopaginazione1.png  used on input 
 line 292.
 (pdftex.def)             Requested size: 294.42636pt x 163.69264pt.
-<immagini/indirizzologicosegmentazione.png, id=812, 766.865pt x 457.71pt>
+<immagini/indirizzologicosegmentazione.png, id=872, 766.865pt x 457.71pt>
 File: immagini/indirizzologicosegmentazione.png Graphic file (type png)
 <use immagini/indirizzologicosegmentazione.png>
 Package pdftex.def Info: immagini/indirizzologicosegmentazione.png  used on inp
@@ -1999,7 +1999,7 @@ as been already used, duplicate ignored
 l.331         \item L
                      a dimensione della memoria virtuale é limitata dallo s...
  <./immagini/indirizzologicosegmentazione.png>]
-<immagini/comeunprocessovedelamemoria.png, id=827, 617.30624pt x 499.8675pt>
+<immagini/comeunprocessovedelamemoria.png, id=887, 617.30624pt x 499.8675pt>
 File: immagini/comeunprocessovedelamemoria.png Graphic file (type png)
 <use immagini/comeunprocessovedelamemoria.png>
 Package pdftex.def Info: immagini/comeunprocessovedelamemoria.png  used on inpu
@@ -2027,12 +2027,12 @@ as been already used, duplicate ignored
 l.359         \item I
                      l numbero di frame in memoria principale <./immagini/comeu
 nprocessovedelamemoria.png>]
-<immagini/pagetableentry.png, id=834, 255.95625pt x 159.59625pt>
+<immagini/pagetableentry.png, id=894, 255.95625pt x 159.59625pt>
 File: immagini/pagetableentry.png Graphic file (type png)
 <use immagini/pagetableentry.png>
 Package pdftex.def Info: immagini/pagetableentry.png  used on input line 366.
 (pdftex.def)             Requested size: 294.42636pt x 183.59512pt.
-<immagini/HardwarePerPaginazione.png, id=835, 706.64pt x 489.83pt>
+<immagini/HardwarePerPaginazione.png, id=895, 706.64pt x 489.83pt>
 File: immagini/HardwarePerPaginazione.png Graphic file (type png)
 <use immagini/HardwarePerPaginazione.png>
 Package pdftex.def Info: immagini/HardwarePerPaginazione.png  used on input lin
@@ -2213,7 +2213,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<immagini/TabellaA2Livelli.png, id=845, 720.6925pt x 344.28625pt>
+<immagini/TabellaA2Livelli.png, id=905, 720.6925pt x 344.28625pt>
 File: immagini/TabellaA2Livelli.png Graphic file (type png)
 <use immagini/TabellaA2Livelli.png>
 Package pdftex.def Info: immagini/TabellaA2Livelli.png  used on input line 402.
@@ -2267,18 +2267,18 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<immagini/HardwareTabella2Livelli.png, id=846, 739.76375pt x 484.81125pt>
+<immagini/HardwareTabella2Livelli.png, id=906, 739.76375pt x 484.81125pt>
 File: immagini/HardwareTabella2Livelli.png Graphic file (type png)
 <use immagini/HardwareTabella2Livelli.png>
 Package pdftex.def Info: immagini/HardwareTabella2Livelli.png  used on input li
 ne 410.
 (pdftex.def)             Requested size: 294.42636pt x 192.95197pt.
-<immagini/HardwareTLB.png, id=847, 733.74126pt x 504.88625pt>
+<immagini/HardwareTLB.png, id=907, 733.74126pt x 504.88625pt>
 File: immagini/HardwareTLB.png Graphic file (type png)
 <use immagini/HardwareTLB.png>
 Package pdftex.def Info: immagini/HardwareTLB.png  used on input line 423.
 (pdftex.def)             Requested size: 294.42636pt x 202.59804pt.
-<immagini/FunzionamentoTLB.png, id=848, 458.71375pt x 581.17125pt>
+<immagini/FunzionamentoTLB.png, id=908, 458.71375pt x 581.17125pt>
 File: immagini/FunzionamentoTLB.png Graphic file (type png)
 <use immagini/FunzionamentoTLB.png>
 Package pdftex.def Info: immagini/FunzionamentoTLB.png  used on input line 428.
@@ -2316,7 +2316,7 @@ as been already used, duplicate ignored
 l.431     I
            l sistema operativo deve poter resettare il TLB, perché il TLB c...
  <./immagini/HardwareTabella2Livelli.png> <./immagini/HardwareTLB.png>]
-<immagini/TLBeCache.png, id=862, 653.44125pt x 549.05125pt>
+<immagini/TLBeCache.png, id=922, 653.44125pt x 549.05125pt>
 File: immagini/TLBeCache.png Graphic file (type png)
 <use immagini/TLBeCache.png>
 Package pdftex.def Info: immagini/TLBeCache.png  used on input line 443.
@@ -2338,14 +2338,14 @@ as been already used, duplicate ignored
 l.446     \subsubsection{Dimensione delle pagine}
                                                   <./immagini/FunzionamentoTLB.
 png>]
-<immagini/Grafico1.png, id=869, 664.4825pt x 448.67625pt>
+<immagini/Grafico1.png, id=929, 664.4825pt x 448.67625pt>
 File: immagini/Grafico1.png Graphic file (type png)
 <use immagini/Grafico1.png>
 Package pdftex.def Info: immagini/Grafico1.png  used on input line 454.
 (pdftex.def)             Requested size: 294.42636pt x 198.80794pt.
 
 GestioneDellaMemoria.tex:459: Undefined control sequence.
-l.459     clustes \ldotsecc
+l.459     cluster \ldotsecc
                             ma anche per i sistemi operativi stessi(kernel M...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2353,7 +2353,6 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2367,14 +2366,30 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.45}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.47 \end{document}
-                   
+l.461     \subsection{Segmentazione}
+                                    
 pdfTeX warning (ext4): destination with the same identifier (name{figure.46}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.47 \end{document}
-                    <./immagini/TLBeCache.png> <./immagini/Grafico1.png>]
+l.461     \subsection{Segmentazione}
+                                     <./immagini/TLBeCache.png> <./immagini/Gra
+fico1.png>]
+<immagini/OrganizzazioneSegmentazione.png, id=938, 339.2675pt x 118.4425pt>
+File: immagini/OrganizzazioneSegmentazione.png Graphic file (type png)
+<use immagini/OrganizzazioneSegmentazione.png>
+Package pdftex.def Info: immagini/OrganizzazioneSegmentazione.png  used on inpu
+t line 477.
+(pdftex.def)             Requested size: 294.42636pt x 102.79291pt.
+<immagini/Traduzione degli indirizzi Segmentazione.png, id=939, 709.65125pt x 4
+80.79625pt>
+File: immagini/Traduzione degli indirizzi Segmentazione.png Graphic file (type 
+png)
+<use immagini/Traduzione degli indirizzi Segmentazione.png>
+Package pdftex.def Info: immagini/Traduzione degli indirizzi Segmentazione.png 
+ used on input line 485.
+(pdftex.def)             Requested size: 294.42636pt x 199.4827pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2383,7 +2398,341 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[54] (C:/Users\Axel\Desktop\universita\Sistemi Operativi\auxil\main.aux
+[54
+pdfTeX warning (ext4): destination with the same identifier (name{figure.47}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.488     \subsection{Segmentazione e Paginazione}
+                                                   <./immagini/OrganizzazioneSe
+gmentazione.png>]
+<immagini/Combinazione Segmenti e pagine.png, id=946, 760.8425pt x 302.12875pt>
+
+File: immagini/Combinazione Segmenti e pagine.png Graphic file (type png)
+<use immagini/Combinazione Segmenti e pagine.png>
+Package pdftex.def Info: immagini/Combinazione Segmenti e pagine.png  used on i
+nput line 494.
+(pdftex.def)             Requested size: 294.42636pt x 116.91693pt.
+<immagini/Traduzione Segmenti e Pagine.png, id=947, 744.7825pt x 485.815pt>
+File: immagini/Traduzione Segmenti e Pagine.png Graphic file (type png)
+<use immagini/Traduzione Segmenti e Pagine.png>
+Package pdftex.def Info: immagini/Traduzione Segmenti e Pagine.png  used on inp
+ut line 500.
+(pdftex.def)             Requested size: 294.42636pt x 192.0542pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[55
+pdfTeX warning (ext4): destination with the same identifier (name{figure.48}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.503     C
+           ombinando segmento e pagine, prima calcolo l'indirizzo del segmen...
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.49}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.503     C
+           ombinando segmento e pagine, prima calcolo l'indirizzo del segmen...
+ <./immagini/Traduzione degli indirizzi Segmentazione.png> <./immagini/Combinaz
+ione Segmenti e pagine.png>]
+<immagini/Protezione.png, id=957, 393.47pt x 451.6875pt>
+File: immagini/Protezione.png Graphic file (type png)
+<use immagini/Protezione.png>
+Package pdftex.def Info: immagini/Protezione.png  used on input line 508.
+(pdftex.def)             Requested size: 294.42636pt x 337.98596pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[56
+pdfTeX warning (ext4): destination with the same identifier (name{figure.50}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.511     C
+           on la segmentazione implementare la condivisione ed la protezione...
+ <./immagini/Traduzione Segmenti e Pagine.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[57
+pdfTeX warning (ext4): destination with the same identifier (name{figure.51}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.529         \item \textbf
+                           {Politica di Sostituzione} <./immagini/Protezione.pn
+g>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[58]
+<immagini/MediumTermScheduler.png, id=974, 637.38126pt x 480.79625pt>
+File: immagini/MediumTermScheduler.png Graphic file (type png)
+<use immagini/MediumTermScheduler.png>
+Package pdftex.def Info: immagini/MediumTermScheduler.png  used on input line 5
+99.
+(pdftex.def)             Requested size: 294.42636pt x 222.09332pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[59]
+<immagini/ProcessiMediumTermScheduler.png, id=979, 722.7pt x 422.57875pt>
+File: immagini/ProcessiMediumTermScheduler.png Graphic file (type png)
+<use immagini/ProcessiMediumTermScheduler.png>
+Package pdftex.def Info: immagini/ProcessiMediumTermScheduler.png  used on inpu
+t line 609.
+(pdftex.def)             Requested size: 294.42636pt x 172.15579pt.
+
+GestioneDellaMemoria.tex:621: Missing $ inserted.
+<inserted text> 
+                $
+l.621 ...re" dei processi da disco \longrightarrow
+                                                   ram, lo devo fare con pro...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+GestioneDellaMemoria.tex:624: Missing $ inserted.
+<inserted text> 
+                $
+l.624 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (661.79985pt too wide) in paragraph at lines 621--624
+\OT1/cmr/m/n/10.95 Se devo "sveg-liare" dei pro-cessi da disco $[][]\OMS/cmsy/m
+/n/10.95 ! \OML/cmm/m/it/10.95 ram; lodevofareconprocessichesonoochesarannoread
+y; alcontrariosedevosospenderedeiprocessi; lodevofareconprocessichesonoinesecuz
+ionechesonobloccatiochelosarannonelbreveperiodo:$ 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[60
+pdfTeX warning (ext4): destination with the same identifier (name{figure.52}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.625     L
+           'idea é quella di effettuare un monitoraggio dei processi, ogni ...
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.53}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.625     L
+           'idea é quella di effettuare un monitoraggio dei processi, ogni ...
+ <./immagini/MediumTermScheduler.png> <./immagini/ProcessiMediumTermScheduler.p
+ng>]
+<immagini/AlgoritmoSostituzioneOttimale.png, id=988, 730.73pt x 202.7575pt>
+File: immagini/AlgoritmoSostituzioneOttimale.png Graphic file (type png)
+<use immagini/AlgoritmoSostituzioneOttimale.png>
+Package pdftex.def Info: immagini/AlgoritmoSostituzioneOttimale.png  used on in
+put line 659.
+(pdftex.def)             Requested size: 294.42636pt x 81.69557pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[61
+pdfTeX warning (ext4): destination with the same identifier (name{figure.54}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.664     \subsubsection*{LRU}
+                               <./immagini/AlgoritmoSostituzioneOttimale.png>]
+<immagini/AlgoritmoSostituzioneLRU.png, id=996, 734.745pt x 236.885pt>
+File: immagini/AlgoritmoSostituzioneLRU.png Graphic file (type png)
+<use immagini/AlgoritmoSostituzioneLRU.png>
+Package pdftex.def Info: immagini/AlgoritmoSostituzioneLRU.png  used on input l
+ine 671.
+(pdftex.def)             Requested size: 294.42636pt x 94.92581pt.
+<immagini/AlgoritmoSostituzioneFIFO.png, id=997, 755.82375pt x 241.90375pt>
+File: immagini/AlgoritmoSostituzioneFIFO.png Graphic file (type png)
+<use immagini/AlgoritmoSostituzioneFIFO.png>
+Package pdftex.def Info: immagini/AlgoritmoSostituzioneFIFO.png  used on input 
+line 684.
+(pdftex.def)             Requested size: 294.42636pt x 94.23134pt.
+<immagini/AlgoritmoSostituzioneClock.png, id=998, 693.59125pt x 203.76125pt>
+File: immagini/AlgoritmoSostituzioneClock.png Graphic file (type png)
+<use immagini/AlgoritmoSostituzioneClock.png>
+Package pdftex.def Info: immagini/AlgoritmoSostituzioneClock.png  used on input
+ line 696.
+(pdftex.def)             Requested size: 294.42636pt x 86.49632pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[62
+pdfTeX warning (ext4): destination with the same identifier (name{figure.55}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.698     \end{figure}
+                      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.56}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.698     \end{figure}
+                       <./immagini/AlgoritmoSostituzioneLRU.png> <./immagini/Al
+goritmoSostituzioneFIFO.png>]
+<immagini/AlgoritmoSostituzioneClockComplesso.png, id=1007, 538.01pt x 486.8187
+6pt>
+File: immagini/AlgoritmoSostituzioneClockComplesso.png Graphic file (type png)
+<use immagini/AlgoritmoSostituzioneClockComplesso.png>
+Package pdftex.def Info: immagini/AlgoritmoSostituzioneClockComplesso.png  used
+ on input line 705.
+(pdftex.def)             Requested size: 294.42636pt x 266.41406pt.
+<immagini/ConfrontoTraAlgoritmiSostituzione.png, id=1008, 689.57625pt x 418.563
+75pt>
+File: immagini/ConfrontoTraAlgoritmiSostituzione.png Graphic file (type png)
+<use immagini/ConfrontoTraAlgoritmiSostituzione.png>
+Package pdftex.def Info: immagini/ConfrontoTraAlgoritmiSostituzione.png  used o
+n input line 710.
+(pdftex.def)             Requested size: 294.42636pt x 178.71431pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[63
+pdfTeX warning (ext4): destination with the same identifier (name{figure.57}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.713     \subsubsection*{Buffering delle pagine}
+                                                 
+pdfTeX warning (ext4): destination with the same identifier (name{figure.58}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.713     \subsubsection*{Buffering delle pagine}
+                                                  <./immagini/AlgoritmoSostituz
+ioneClock.png> <./immagini/AlgoritmoSostituzioneClockComplesso.png>]
+<immagini/AlgoritmoSostituzioneBufferingDellePagine.png, id=1017, 861.2175pt x 
+256.96pt>
+File: immagini/AlgoritmoSostituzioneBufferingDellePagine.png Graphic file (type
+ png)
+<use immagini/AlgoritmoSostituzioneBufferingDellePagine.png>
+Package pdftex.def Info: immagini/AlgoritmoSostituzioneBufferingDellePagine.png
+  used on input line 720.
+(pdftex.def)             Requested size: 294.42636pt x 87.8475pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[64
+pdfTeX warning (ext4): destination with the same identifier (name{figure.59}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.737 ...ubsection*{Gestione della memoria utente}
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{figure.60}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.737 ...ubsection*{Gestione della memoria utente}
+                                                   <./immagini/ConfrontoTraAlgo
+ritmiSostituzione.png> <./immagini/AlgoritmoSostituzioneBufferingDellePagine.pn
+g>]
+GestioneDellaMemoria.tex:749: Missing $ inserted.
+<inserted text> 
+                $
+l.749     di PG_
+                active, due liste di pagine sono mantenute dal kernel : atti...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+GestioneDellaMemoria.tex:750: Missing $ inserted.
+<inserted text> 
+                $
+l.750 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+<immagini/ReplacementLinux.png, id=1026, 652.4375pt x 509.905pt>
+File: immagini/ReplacementLinux.png Graphic file (type png)
+<use immagini/ReplacementLinux.png>
+Package pdftex.def Info: immagini/ReplacementLinux.png  used on input line 758.
+
+(pdftex.def)             Requested size: 294.42636pt x 230.10869pt.
+)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[65
+pdfTeX warning (ext4): destination with the same identifier (name{figure.61}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.47 \end{document}
+                    <./immagini/ReplacementLinux.png>]
+(C:/Users\Axel\Desktop\universita\Sistemi Operativi\auxil\main.aux
 C:/Users\Axel\Desktop\universita\Sistemi Operativi\auxil\main.aux:91: Missing \
 endcsname inserted.
 <to be read again> 
@@ -2403,13 +2752,13 @@ L3 programming layer <2024-01-04>
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: BFE9E0A3790C4A66CBE3CCF991CC1EF2;15073.
+(rerunfilecheck)             Checksum: 205E2D7E11610F87D760E0E8B5B461BA;16983.
  ) 
 Here is how much of TeX's memory you used:
- 11267 strings out of 474486
- 182530 string characters out of 5753573
+ 11482 strings out of 474486
+ 190791 string characters out of 5753573
  1948542 words of memory out of 5000000
- 33181 multiletter control sequences out of 15000+600000
+ 33358 multiletter control sequences out of 15000+600000
  565371 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,12n,79p,524b,530s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2425,9 +2774,9 @@ les/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/pub
 lic/amsfonts/cm/cmsy8.pfb>
 Output written on "C:/Users\Axel\Desktop\universita\Sistemi Operativi\out\main.
-pdf" (54 pages, 3735545 bytes).
+pdf" (65 pages, 4883214 bytes).
 PDF statistics:
- 985 PDF objects out of 1000 (max. 8388607)
- 233 named destinations out of 1000 (max. 500000)
- 979 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1144 PDF objects out of 1200 (max. 8388607)
+ 271 named destinations out of 1000 (max. 500000)
+ 1150 words of extra memory for PDF output out of 10000 (max. 10000000)
 

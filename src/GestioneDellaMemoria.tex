@@ -436,7 +436,7 @@
     usato direttamente come indice per il TLB (possibile nella tabella delle pagine), Il SO inoltre puó interrogare piú
     elementi del TLB contemporaneamente per capire se c'é o no un hit \textbf{con il supporto hardware}, un altro
     problema é che bisogna fare in modo che il TLB contenga solo pagine in RAM, perché se ci fosse un page fault dopo
-    un hit del TLB potremmo non accorgercene, quindi ogni volta che si swappa una pagina bisogna anche resettare o parzilemente il
+    un hit del TLB potremmo non accorgercene, quindi ogni volta che si swappa una pagina bisogna anche resettare o parzialemente il
     TLB.
     \begin{figure}[H]
         \centering
@@ -456,7 +456,313 @@
     \end{figure}
     Nelle moderne architetture HW possono supportare pagine anche fino ad 1GB, il sistema operativo
     ne sceglie 1 Es. Linux sugli x86 usa 4KB e le dimensioni piú grandi sono usati in sistemi operativi di grandi architetture
-    clustes \ldotsecc ma anche per i sistemi operativi stessi(kernel Mode)
+    cluster \ldotsecc ma anche per i sistemi operativi stessi(kernel Mode)
+
+    \subsection{Segmentazione}
+    La segmentazione permette al programmatore di vedere la memoria come un insiem di spazi di indirizzi, la loro dimensione puó
+    quindi variare, questo é utile perché semplifica la gestione delle strutture dati che crescono (Es. stack delle chiamate),
+    permette di modificare e ricompilare i programmi in modo indipendente, permette di condividere e di proteggere i dati
+    in modo piú semplice : In un segmento ci sono dati condivisi (Tra processi) e invece in un altro segmento ci sono dati
+    privati.
+    \subsubsection*{Organizzazione}
+    Ogni processo ha una sua tabella dei segmenti (Il PCB punta a questa tabella), ogni entry contiene:
+    \begin{itemize}
+        \item l'indirizzo base del segmento
+        \item la lunghezza del segmento
+        \item un bit per indicare se il segmento é in memoria principale
+        \item un bit per indicare se il segmento é stato modificato in seguito all'ultima volta che é stato caricato in memoria
+    \end{itemize}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\textwidth]{immagini/OrganizzazioneSegmentazione}
+        \caption{Segment Table Entry}
+    \end{figure}
+    \subsubsection*{Traduzione Indirizzi}
+    Nella somma per trovare l'indirizzo fisico, é necessario moltiplicare l'indirizzo del segmento per la dimensione
+    di ogni entry della tabella dei segmenti, dopo di che si puó fare la somma.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\textwidth]{immagini/Traduzione degli indirizzi Segmentazione}
+        \caption{Traduzione Indirizzi}
+    \end{figure}
+    \subsection{Segmentazione e Paginazione}
+    La paginazione é trasparente al programmatore, nel senso che il programmatore non ne é a conoscenza, mentre la
+    segmentazione invece é implementata dal programmatore (se programma in assembly), tipicamente (Pentium) paginazione
+    e segmentazione sono usate insieme, in questo caso il programmatore vede la memoria come un insieme di segmenti.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\textwidth]{immagini/Combinazione Segmenti e pagine}
+        \caption{Segmentazione e Paginazione}
+    \end{figure}
+    \subsubsection*{Traduzione di segmenti e pagine}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\textwidth]{immagini/Traduzione Segmenti e Pagine}
+        \caption{Traduzione Segmenti e Pagine}
+    \end{figure}
+    Combinando segmento e pagine, prima calcolo l'indirizzo del segmento, e poi calcolo l'indirizzo della pagina
+    quindi nella Tabella dei segmenti trovo l'indirizzo della tabella delle pagine.
+    \subsubsection{Protezione}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\textwidth]{immagini/Protezione}
+        \caption{Tre Processi}
+    \end{figure}
+    Con la segmentazione implementare la condivisione ed la protezione é piú semplice, perché basta mettere i segmenti
+    condivisi in una zona di memoria condivisa, e mettere i segmenti privati in una zona di memoria privata, inoltre
+    siccome ogni segmento ha una base ed una lunghezza, é facile controllare che i riferimenti siano contenuti ne giusto intervallo,
+    invece per la condivisione basta dire che uno stesso segmento é condiviso tra piú processi.
+    Nell'immagine sopra, si vede come ogni processo ha una parte condivisa e una parte privata, la parte in alto é
+    privata mentre in basso é condivisa, spetta al programmatore tramite opportune system call quali parti dei processi sono condivise
+    \subsection{Decisioni}
+    \begin{itemize}
+        \item Usare o no la memoria virtuale ?
+        \item Usare solo la paginazione? Linux usa sempre la paginazione
+        \item Usare solo la segmentazione?Linux usa la segmentazione solo quando é costretto
+        \item Usare entrambe?
+        \item Che algoritmi usare per gestire i vari aspetti della gestione della memoria?
+    \end{itemize}
+    Esistono diversi aspetti da definire per la progettazzione di un sistema operativo:
+    \begin{itemize}
+        \item \textbf{politica di prelievo}
+        \item \textbf{Politica di posizionamento}
+        \item \textbf{Politica di Sostituzione}
+        \item \textbf{Gestione del residen set}
+        \item \textbf{Politica di pulitura}
+        \item \textbf{Controllo del carico}
+    \end{itemize}
+    Tutto questo deve essere effettuato cercando di minimizzare il numero dei page fault; non esiste quindi una politica
+    sempre vincente.
+    \subsubsection{Fetch Policy}
+    La fetch policy decide quando una pagina deve essere caricata in memoria:
+    \begin{itemize}
+        \item \textbf{Demand Fetch} : la pagina viene caricata solo quando c'é un page fault
+        \item \textbf{Prepaging} : si carica in memoria anche le pagine che potrebbero essere usate in futuro
+    \end{itemize}
+    \subsubsection*{Demand Fetch}
+    Con il paging on demand, abbiamo molti page fault all'inizio, siccome ogni pagina viene caricata solo quando serve.
+    \subsubsection*{Prepaging}
+    Con il prepaging, si carica in memoria anche le pagine che potrebbero essere usate in futuro, in modo da evitare
+    page fault, il problema é che si potrebbero caricare in memoria pagine che non verranno mai usate. Si cerca quindi
+    di sfruttare il principio di localitá, caricando in memoria pagine vicine a quelle che sono state richieste.
+    \subsubsection{Posizionamento}
+    La politica di posizionamento decide dove mettere le pagine in memoria, quando c'é almeno un frame libero, salto la prima
+    parte riservata al kernel e metto la pagina al primo frame libero che trovo, grazie alla traduzione degli indirizzi
+    possiamo mettere le pagine in memoria in modo non contiguo, ogni volta che viene caricata in memoria la tabella delle pagine viene
+    aggiornata, quindi questo si puó fare solo quando c'é un frame libero, se invece tutti i frame sono occupati, bisogna
+    avere una politica di sostituzione.
+    \subsubsection{Sostituzione}
+    La politica di sostituzione decide quale pagina sostituire quando tutti i frame sono occupati, il problema é che
+    non si puó sapere a priori quale pagina verrá usata, essenzialmente ci sono due problemi quando ho deciso quale frame
+    sostituire:
+    \begin{itemize}
+        \item prendere la pagina che verrá usata e sostituirla nella tabella delle pagine e mettere il bit di presenza a 1
+        \item per la pagina che ho appena sostituito devo aggiornare la tabella delle pagine e mettere il bit di presenza a 0
+    \end{itemize}
+    Gli algoritmi sono pensati per minimizzare la probabilitá che appena ho sostituito una pagina, debba subito essere
+    ricaricata.
+    \subsubsection{Gestione del resident set}
+    Il resident set é la parte del processo che é in memoria principale, la  gestione del resident set ha due problemi:
+    \begin{itemize}
+        \item decidere per ogni processo quanti frame vanno assegnati
+        \item Quando sis rimpiazza un frame, bisogna scegliere solo tra i frame del solo processo corrente o tra tutti i frame
+        presenti in memoria (Replacement Scope)
+    \end{itemize}
+    Esistono 2 tecniche per risolvere il problema:
+    \begin{itemize}
+        \item \textbf{Fixed Allocation} : assegno un numero fisso di frame ad ogni processo e non lo modifico fino al termine di esso
+        \item \textbf{Variable Allocation} : assegno un numero variabile di frame ad ogni processo
+    \end{itemize}
+    Per quello che riguarda il Replacement Scope, si puó scegliere di rimpiazzare solo i frame del processo corrente o
+    tutti i frame presenti in memoria, la scelta dipende dal fatto che si voglia privilegiare la localitá o meno, da notare
+    che se scelgo la locazione fissata, il Replacement Scope é automaticamente limitato al processo corrente.
+    \subsubsection*{Frame Bloccati}
+    Un frame é bloccato se non puó essere rimpiazzato, ad esempio perché contiene una parte del sistema operativo, o
+    perché contiene una parte di un dispositivo di I/O, o perché contiene una parte di un processo che é in esecuzione.
+    \subsubsection{Politica di Pulitura}
+    Se un frame é stato modificato, va riportata la modifica anche sulla pagina corrisspondente, il problema é : quando ?
+    \begin{itemize}
+        \item non appena avviene la modifica
+        \item quando il frame viene rimpiazzato
+    \end{itemize}
+    Tipicamente si fa una via di mezzo, intrecciata con il page buffering, solitamente si raccolgono un po'di richieste di
+    frame da modificare e si fanno tutte insieme.
+    \subsubsection{Controllo del Carico}
+    Esistono 3 tipi di scheduler:
+    \begin{itemize}
+        \item \textbf{Short Term Scheduler} : riferito ai processi ready.
+        \item \textbf{Medium Term Scheduler} : riferito ai processi in memoria principale
+        \item \textbf{Long Term Scheduler} : riferito ai processi in memoria secondaria
+    \end{itemize}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\textwidth]{immagini/MediumTermScheduler}
+        \caption{Controllo del carico}
+    \end{figure}
+    L'idea del controllo del carico é quella di mantenere il grado piú alto possibile di multiprogrammazione, quindi
+    mantenere quanti piú processi possibile in memoria principale, ma non troppo perché altrimenti si rischia il trashing,
+    ovvero sono presenti tanti page fault, si vede dal grafico che con un buon livello di multiprogrammazione si ha
+    un buon tempo di utilizzo del processore, mentre con un livello troppo alto si ha un tempo di utilizzo del processore
+    inferire.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\textwidth]{immagini/ProcessiMediumTermScheduler}
+        \caption{Stati dei processi e Medium Term Scheduler}
+    \end{figure}
+    Un processo quindi si dice \textbf{suspended} quando il suo resident set é 0, mentre si dice \textbf{Run}
+    quando il suo resident set é maggiore di 0, il Medium Term Scheduler si occupa di decidere quali processi
+    sospendere e quali far ripartire, inoltre si occupa di decidere quali processi caricare in memoria principale
+    \subsubsection*{Controllo del carico}
+    Controllo del carico vuol dire che il sistema operativo ha due cose che puó fare:
+    \begin{itemize}
+        \item Prendo un processo che é suspended e lo metto in memoria principale rendendolo ready
+        \item Prendo un processo che é ready e lo sospendo mettendolo in memoria secondaria
+    \end{itemize}
+    Se devo "svegliare" dei processi da disco \longrightarrow ram, lo devo fare con processi che sono o che saranno ready, al contrario
+    se devo sospendere dei processi, lo devo fare con processi che sono in esecuzione che sono bloccati o che lo saranno
+    nel breve periodo.
+
+    L'idea é quella di effettuare un monitoraggio dei processi, ogni tanto c'é un processo del SO che controlla
+    i processi e decide quali sospendere e quali far ripartire, ad esempio misurare il tempo medio per due fault di pagina
+    e confrontarlo con il tempo medio della gestione di un fault se queste cose sono molto vicine significa che stiamo facendo
+    trashing, la politica di monitoraggio viene chiamata ogni tot page fault, questo viene messo all'interno della politica di rimpiazamento
+    \subsubsection*{Come scegliere un processo da sospendere}
+    \begin{itemize}
+        \item processo con minore priorità
+        \item processo che ha causato l'ultimo page fault
+        \item ultimo processo attivato
+        \item working set piú piccolo
+        \item il proccesso cha il piú numero di pagine
+        \item processo con il piú alto tempo rimanente di esecuzione(se disponibile)
+    \end{itemize}
+    \subsection{Algoritmi di Sostituzione}
+    Immaginiamo di avere la RAM piena e per un dato processo conosco i frame che gli sono stati assegnati.
+    gli algoritmi che possiamo usare sono:
+    \begin{itemize}
+        \item \textbf{Optimal} : sostituisce la pagina che non verrá usata per il piú lungo periodo di tempo
+        \item \textbf{FIFO} : sostituisce la pagina che é stata caricata per prima
+        \item \textbf{LRU} : sostituisce la pagina che non é stata usata per il piú lungo periodo di tempo
+        \item \textbf{Clock}
+    \end{itemize}
+    \subsubsection*{Esempio comune}
+    Siamo in una memoria con 3 frame, e abbiamo 5 pagine, e la sequenza di riferimenti é la seguente:
+    \begin{center}
+        2,3,2,1,5,2,4,5,3,2,5,2
+    \end{center}
+    \subsubsection*{Optimal}
+    L'algoritmo ottimale sostituisce la pagina che non verrá usata per il piú lungo periodo di tempo, quindi
+    per ogni pagina che devo sostituire, guardo tutte le pagine che verranno usate in futuro e sostituisco quella
+    che verrá usata piú tardi, il problema é che non posso sapere a priori quali pagine verranno usate in futuro,
+    quindi l'algoritmo ottimale é un algoritmo teorico, perché non é implementabile.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\textwidth]{immagini/AlgoritmoSostituzioneOttimale}
+        \caption{Optimal}
+    \end{figure}
+    come si nota dalla figura, abbiamo solo 3 pagefault,dopo che la memoria é piena, si puó notare quando si vuole caricare 5
+    vado a sostituire 1, perché 1 non verrá piú usato, e cosí via.
+    \subsubsection*{LRU}
+    LRU (Least Recently Used) sostituisce la pagina che non é stata usata per il piú lungo periodo di tempo, Basandosi sul principio
+    di localitá, dovrebbe essere la pagina che ha meno probabilitá di essere ri-usata al riferimento successivo, il motivo per cui
+    si é restii ad adottare LRU é che é difficile da implementare, perché ad ogni frame bisogna associare un timestamp, e poi
+    scorrere tutti i tempi e scegliere il minore, la Cache lo fa in hardware, ma in software é un overhead considerevole.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\textwidth]{immagini/AlgoritmoSostituzioneLRU}
+        \caption{LRU}
+    \end{figure}
+    Nell'esempio con l'algoritmo ottimale avevamo sostituito 1, invece con LRU sostituiamo 3, perché 3 é stato usato
+    prima di 1 e di 2, quindi é la pagina che ha meno probabilitá di essere riutilizzata, anche se la scelta ottimale
+    sarebbe stata 1, il totale dei page fault nella sequenza é comunque 4 che é un ottimo risultato.
+    \subsubsection*{FIFO}
+    FIFO (First In First Out) sostituisce la pagina che é stata caricata per prima, é un algoritmo molto semplice,
+    in pratica i frame vengono trattati come una coda circolare, da questa coda, le pagine vengono rimosse a turno (Round Robin)
+    ,il vantaggio é che é molto semplice da implementare, in pratica vengono rimpiazzate le pagine che sono state in memoria per
+    piú tempo.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\textwidth]{immagini/AlgoritmoSostituzioneFIFO}
+        \caption{FIFO}
+    \end{figure}
+    Vediamo come in questo caso il risultato sono 6 page fault, perché l'algoritmo non si accorge che la pagina 2 e 5
+    sono molto richieste.
+    \subsubsection*{Clock}
+    L'algoritmo Clock é un compromesso tra LRU e FIFO, esiste quindi un "use bit" per ogni frame, che indica se la pagina caricata nel
+    frame é stata riferita, il bit quindi viene messo a 1 quando la pagina viene caricata in memoria principale, e poi rimesso ad 1
+    per ogni accesso al suo interno, quando é necessario sostituire una pagina, si scorre la coda circolare con il FIFO e si
+    controlla il bit, se il bit é 0, la pagina viene sostituita, altrimenti il bit viene messo a 0 e si passa al prossimo frame.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\textwidth]{immagini/AlgoritmoSostituzioneClock}
+        \caption{Clock}
+    \end{figure}
+    Riempiamo la memoria con 3 pagine e ci troviamo con 3 frame occupati con tutti i bit ad 1, quando arriva la pagina 5
+    a questo punto scorro tutti i frame e nella prima passata metto tutti bit a 0, alla seconda passata trovo come primo frame
+    con bit  0 il frame contenente la pagina 2, quindi sostituisco la pagina 2 con la pagina 5, dopo arriva la chiamata alla
+    pagina 2, e quindi vado a sostituire la pagina 3 perché é la prima con bit 0 e cosí via.il numero di page fault é 5.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\textwidth]{immagini/AlgoritmoSostituzioneClockComplesso}
+        \caption{Clock}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\textwidth]{immagini/ConfrontoTraAlgoritmiSostituzione}
+        \caption{Clock}
+    \end{figure}
+    \subsubsection*{Buffering delle pagine}
+    Un'altra tecnica per ridurre il numero di page fault é il buffering delle pagine, é nata come una modifica dell'algoritmo
+    FIFO, serve per ridurre il numero di page fault, in pratica riduco la memoria al processo, e la parte rimanente la uso
+    come buffer(cache), in questo modo se una pagina viene rimpiazzata, non viene scritta su disco, ma viene messa nel buffer,
+    in questo modo se la pagina viene richiesta di nuovo, non devo andare a leggerla dal disco, ma la prendo dal buffer.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\textwidth]{immagini/AlgoritmoSostituzioneBufferingDellePagine}
+        \caption{Buffering delle pagine}
+    \end{figure}
+    Ci sono solo 2 frame per il processo bastano le prime 2 pagine, quando arriva 1 sostituico 2 (FIFO), ma non butto via
+    2, ma lo metto nel buffer, quando arriva 5 sostituisco 3, ma non butto via 3, ma lo metto nel buffer e cosi via, l'efficienza
+    del buffering si apprezza solo con un numero ragionevole di frame.
+    \subsection{Gestione della Memoria in Linux}
+    Linux fa una distinzione netta tra richieste di memoria da parte del kernel e di processi utente, il kernel si fida di
+    se stesso, mentre per i processi utente ci sono tanti controlli che uccidono il processo se fa qualcosa di sbagliato.
+
+    \subsubsection*{Gestione della memoria Kernel}
+    Il kernel potrebbe avere bisogno di memoria sia piccole che grandi contemporaneamente, quindi il kernel puó usare
+    sia la parte riservata che anche quella dei processi utente, se la richiesta é piccola, il kernel fa in modo di avere
+    giá pronte alcune pagine in memoria, questa tecnica si chiama \textbf{Slab Allocator}, se la richiesta é grande, il kernel
+    fa in modo piú pagine contigue in frame contigui, questo per il DMA per esempio, ricordiamo che il dispositivo di I/O
+    non sa niente di paginazione, quindi se devo fare un trasferimento di dati tra memoria e dispositivo, devo avere
+    pagine contigue, per fare questo il kernel usa la \textbf{Buddy Allocator} che é una versione modificata del buddy system.
+    \subsubsection*{Gestione della memoria utente}
+    \begin{itemize}
+        \item \textbf{Fetch Policy} : Linux usa la paginazione on demand
+        \item \textbf{Placement Policy} : Il primo frame libero
+        \item \textbf{Replacement Policy} : TBA
+        \item \textbf{Gestione del Resident Set} : politica dinamica con replacement scope globale (Rientra anche la cache del disco)
+        \item \textbf{Pulitura} : viene ritardata il piú possibile : page cache piena, troppe pagine sporche, richiesta esplicita
+        \item \textbf{Controllo del Carico} : assente
+    \end{itemize}
+    \subsubsection*{Replacement Policy Linux}
+    Linux usa un algoritmo dell' orologio corretto ma il kernel piú recente usa LRU, a differenza dell'algoritmo dell'orologio
+    originale quello corretto ha due flag in ogni entry della page tabel, PG\_referenced e PG\_active, sulla base
+    di PG_active, due liste di pagine sono mantenute dal kernel : attive e inattive.
+
+    kswapd é il demone che si occupa di
+    scorrere le pagine inattive PG\_referenced é settato quando la pagina viene richiesta, dopo di che, delle due úna : o arriva prima
+    kswapd (Rimpiazzo la pagina) o un altro riferimento , nel secondo caso (pagina riferita piú volte in poco tempo) pagina settata attiva ,nel primo PG\_referenced é resettato, solo le pagine inattive
+    possono essere rimpiazzate.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\textwidth]{immagini/ReplacementLinux}
+        \caption{Replacement Policy Linux}
+    \end{figure}
+
+
+
+
+
 
 
 
