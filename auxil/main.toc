@@ -7,72 +7,72 @@
 \contentsline {subsection}{\numberline {1.2}Process Control Block}{5}{subsection.1.2}%
 \contentsline {subsection}{\numberline {1.3}Traccia di un processo}{5}{subsection.1.3}%
 \contentsline {subsection}{\numberline {1.4}Eseuzione di un processo}{5}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}Modello dei Processi a 2 stati}{6}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.5}Modello dei Processi a 2 stati}{5}{subsection.1.5}%
 \contentsline {subsection}{\numberline {1.6}Creazione di un processo}{6}{subsection.1.6}%
 \contentsline {subsection}{\numberline {1.7}Terminazione di un processo}{6}{subsection.1.7}%
 \contentsline {subsection}{\numberline {1.8}Modello dei processi a 5 stati}{6}{subsection.1.8}%
-\contentsline {subsection}{\numberline {1.9}Processi Sospesi}{8}{subsection.1.9}%
+\contentsline {subsection}{\numberline {1.9}Processi Sospesi}{7}{subsection.1.9}%
 \contentsline {subsection}{\numberline {1.10}Strutture di controllo del OS}{8}{subsection.1.10}%
 \contentsline {subsubsection}{\numberline {1.10.1}Memory Table}{8}{subsubsection.1.10.1}%
 \contentsline {subsubsection}{\numberline {1.10.2}Tabelle per l'I/O}{9}{subsubsection.1.10.2}%
 \contentsline {subsubsection}{\numberline {1.10.3}File Table}{9}{subsubsection.1.10.3}%
 \contentsline {subsubsection}{\numberline {1.10.4}Process Table}{9}{subsubsection.1.10.4}%
-\contentsline {subsection}{\numberline {1.11}Attributi di un processo}{10}{subsection.1.11}%
-\contentsline {subsubsection}{\numberline {1.11.1}Come si Identifica un processo}{10}{subsubsection.1.11.1}%
+\contentsline {subsection}{\numberline {1.11}Attributi di un processo}{9}{subsection.1.11}%
+\contentsline {subsubsection}{\numberline {1.11.1}Come si Identifica un processo}{9}{subsubsection.1.11.1}%
 \contentsline {subsubsection}{\numberline {1.11.2}Stato del processore}{10}{subsubsection.1.11.2}%
 \contentsline {subsubsection}{\numberline {1.11.3}Control Block del Processo}{10}{subsubsection.1.11.3}%
-\contentsline {subsection}{\numberline {1.12}Processi e Memoria virtuale}{11}{subsection.1.12}%
-\contentsline {subsection}{\numberline {1.13}Modalita di esecuzione}{11}{subsection.1.13}%
+\contentsline {subsection}{\numberline {1.12}Processi e Memoria virtuale}{10}{subsection.1.12}%
+\contentsline {subsection}{\numberline {1.13}Modalita di esecuzione}{10}{subsection.1.13}%
 \contentsline {subsubsection}{\numberline {1.13.1}Kernel Mode}{11}{subsubsection.1.13.1}%
 \contentsline {subsubsection}{\numberline {1.13.2}Da UserMode a KernelMode}{11}{subsubsection.1.13.2}%
 \contentsline {subsection}{\numberline {1.14}Creazione del processo}{12}{subsection.1.14}%
 \contentsline {subsection}{\numberline {1.15}Switching tra processi}{12}{subsection.1.15}%
 \contentsline {subsubsection}{\numberline {1.15.1}Quando effettuare lo switching}{12}{subsubsection.1.15.1}%
 \contentsline {subsubsection}{\numberline {1.15.2}Passaggi per lo switching}{12}{subsubsection.1.15.2}%
-\contentsline {subsubsection}{\numberline {1.15.3}Il Sistema operativo é un processo}{13}{subsubsection.1.15.3}%
+\contentsline {subsubsection}{\numberline {1.15.3}Il Sistema operativo é un processo}{12}{subsubsection.1.15.3}%
 \contentsline {subsubsection}{\numberline {1.15.4}Esempio in Linux}{13}{subsubsection.1.15.4}%
 \contentsline {subsubsection}{\numberline {1.15.5}Stati in Unix}{13}{subsubsection.1.15.5}%
 \contentsline {subsubsection}{\numberline {1.15.6}Transizione tra processi}{14}{subsubsection.1.15.6}%
 \contentsline {subsection}{\numberline {1.16}Immagine del processo in Unix}{14}{subsection.1.16}%
 \contentsline {section}{\numberline {2}I Thread}{15}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Perché introdurre i thread}{15}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}ULT e KLT}{16}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.2}ULT e KLT}{15}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Processi e Thread in Linux}{16}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Gli stati dei processi in Linux}{17}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Segnali ed interrupt in Linux}{17}{subsection.2.5}%
 \contentsline {section}{\numberline {3}Scheduling}{17}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Tipi di scheduling}{18}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Long-term scheduling}{19}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}Long-term scheduling}{18}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Medium-term scheduling}{19}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}short-term scheduling}{20}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.4}short-term scheduling}{19}{subsection.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1}Criteri Utente}{20}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Criteri di sistema}{20}{subsubsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.5}Turnaround time}{20}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Tempo di risposta}{21}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Deadline}{21}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}Throughput}{21}{subsection.3.8}%
-\contentsline {subsection}{\numberline {3.9}Utilizzo del processore}{21}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.6}Tempo di risposta}{20}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Deadline}{20}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Throughput}{20}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Utilizzo del processore}{20}{subsection.3.9}%
 \contentsline {subsection}{\numberline {3.10}Bilanciamento delle risorse}{21}{subsection.3.10}%
 \contentsline {subsection}{\numberline {3.11}Fairness e Priorità}{21}{subsection.3.11}%
 \contentsline {subsection}{\numberline {3.12}Prioritá e Starvation}{21}{subsection.3.12}%
-\contentsline {subsection}{\numberline {3.13}Politiche di scheduling}{22}{subsection.3.13}%
+\contentsline {subsection}{\numberline {3.13}Politiche di scheduling}{21}{subsection.3.13}%
 \contentsline {subsection}{\numberline {3.14}Selection Function}{22}{subsection.3.14}%
 \contentsline {subsection}{\numberline {3.15}Decision Mode}{22}{subsection.3.15}%
-\contentsline {subsubsection}{\numberline {3.15.1}Pre-emptive - Non pre-emptive}{23}{subsubsection.3.15.1}%
-\contentsline {subsection}{\numberline {3.16}ESEMPIO}{23}{subsection.3.16}%
-\contentsline {subsection}{\numberline {3.17}First Come First Served}{23}{subsection.3.17}%
+\contentsline {subsubsection}{\numberline {3.15.1}Pre-emptive - Non pre-emptive}{22}{subsubsection.3.15.1}%
+\contentsline {subsection}{\numberline {3.16}ESEMPIO}{22}{subsection.3.16}%
+\contentsline {subsection}{\numberline {3.17}First Come First Served}{22}{subsection.3.17}%
 \contentsline {subsection}{\numberline {3.18}Round Robin}{23}{subsection.3.18}%
 \contentsline {subsection}{\numberline {3.19}Shortest Process Next}{25}{subsection.3.19}%
 \contentsline {subsection}{\numberline {3.20}Shortest Remaining Time}{28}{subsection.3.20}%
-\contentsline {subsection}{\numberline {3.21}Highest Response Ratio Next}{29}{subsection.3.21}%
-\contentsline {subsection}{\numberline {3.22}Scheduling in Unix}{30}{subsection.3.22}%
-\contentsline {subsection}{\numberline {3.23}Architetture Multicore}{31}{subsection.3.23}%
-\contentsline {subsection}{\numberline {3.24}Scheduling in Linux}{32}{subsection.3.24}%
+\contentsline {subsection}{\numberline {3.21}Highest Response Ratio Next}{28}{subsection.3.21}%
+\contentsline {subsection}{\numberline {3.22}Scheduling in Unix}{29}{subsection.3.22}%
+\contentsline {subsection}{\numberline {3.23}Architetture Multicore}{30}{subsection.3.23}%
+\contentsline {subsection}{\numberline {3.24}Scheduling in Linux}{31}{subsection.3.24}%
 \contentsline {section}{\numberline {4}Gestione della Memoria}{33}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Requisiti}{34}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Rilocazione}{34}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1}Requisiti}{33}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Rilocazione}{33}{subsubsection.4.1.1}%
 \contentsline {subsubsection}{\numberline {4.1.2}Protezione}{36}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.3}Condivisione}{37}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.3}Condivisione}{36}{subsubsection.4.1.3}%
 \contentsline {subsubsection}{\numberline {4.1.4}Organizzazione Logica}{37}{subsubsection.4.1.4}%
 \contentsline {subsubsection}{\numberline {4.1.5}Organizzazione Fisica}{37}{subsubsection.4.1.5}%
 \contentsline {subsection}{\numberline {4.2}Partizionamento}{37}{subsection.4.2}%
@@ -101,3 +101,20 @@
 \contentsline {subsubsection}{\numberline {4.9.6}Controllo del Carico}{59}{subsubsection.4.9.6}%
 \contentsline {subsection}{\numberline {4.10}Algoritmi di Sostituzione}{61}{subsection.4.10}%
 \contentsline {subsection}{\numberline {4.11}Gestione della Memoria in Linux}{64}{subsection.4.11}%
+\contentsline {section}{\numberline {5}La Gestione I/O}{66}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Categoria di dispositivi}{66}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Dispositivi leggibili dall'utente}{66}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Dispositivi leggibili dalla macchina}{66}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Dispositivi di rete/comunicazione}{66}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Funzionamento(Semplificato) dei dispositivi}{67}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Differenze tra dispositivi di I/O}{67}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Tecniche per effettuare l'I/O}{69}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Obbiettivo per SO : Efficienza}{70}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.9}Obbiettivo per SO : Generalitá}{70}{subsection.5.9}%
+\contentsline {subsection}{\numberline {5.10}Buffering I/O}{74}{subsection.5.10}%
+\contentsline {subsection}{\numberline {5.11}HDD vs SSD}{75}{subsection.5.11}%
+\contentsline {subsubsection}{\numberline {5.11.1}Gestione della Cache}{80}{subsubsection.5.11.1}%
+\contentsline {subsection}{\numberline {5.12}RAID}{81}{subsection.5.12}%
+\contentsline {section}{\numberline {6}File System}{85}{section.6}%
+\contentsline {subsection}{\numberline {6.1}I File}{85}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Obbiettivi per il File Management Systems}{87}{subsection.6.2}%
