@@ -279,12 +279,126 @@ In Unix ci sono 6 tipi di file:
     \item symbolic link (Collegamenti simbolici)
 \end{itemize}
 \subsubsection*{Inode}
+Inode é un insieme di informazioni che riguardano il file(directory,file word \ldots) e sono memorizzate in un blocco di memoria, ogni file ha un inode
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{immagini/Inode}
 \end{figure}
-In Unix si usa il concetto di Inode, che é un tipo particolare di allocazione indicizzata, i suoi dati sono organizzati in questo modo:
+In Unix si usa il concetto di Inode, che é un tipo particolare di allocazione indicizzata, Inode significa index node, perché i blocchi
+stessi sono usati come indici per trovare i blocchi che contengono i dati, un certo Inode puó essere associato a piú file (hard link), oltre al fatto che
+contiene informazioni, c'é anche un numero che é associato ad ogni Inode per rendere piú veloce la ricerca, l'idea é che ogni volta che creo un file
+creo un Inode e gli assegno un numero, quando cancello il file il numero puó essere riutilizzato, alcuni Inode sono su disco, altri sono in memoria principale,
+quelli in RAM sono quelli che sono aperti da processi in esecuzione, tutti gli Inode sono in un'area dedicata del disco.
+
+I dati che sono presenti in un Inode sono:
+\begin{itemize}
+    \item Tipo e modo di accesso del file
+    \item Identificatore del propietario
+    \item \textbf{Tempo di creazioone e di ultimo accesso (lettura o scrittura)}
+    \item Flag utente e flag per il kernel
+    \item numero sequenziale di generazione del file
+    \item Dimensione delle informazioni aggiuntive
+    \item altri attributi (Controllo di accesso e altro)
+    \item Dimensione
+    \item Numero di blocchi, o numero i file (per le directory)
+    \item Dimensione dei blocchi
+    \item \textbf{Sequenze di Puntatori ai blocchi di dati}
+\end{itemize}
+Se il file é piccolo, i dati sono puntati direttamente dall'Inode (direct nell'immagine dell'Inode), se il file é grande
+allora si passa agli altri puntatori, il concetto é quello di indicizzazione, quindi ho un indirizzo che punta ad una memoria
+dove sono presenti altri indirizzi (questo é fatto anche su piú livelli (Single, Double, Triple Indirect)), in questo modo
+non serve che i blocchi vengano contrassegnati se contengono dati o indirizzi, perché il sistema operativo sa che con il triplo
+indirizzamento, il file system deve attraversare 3 blocchi per trovare i dati.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{immagini/Inode2}
 \end{figure}
+\subsubsection*{Inode e Directory}
+Le directory sono file che contengono una lista di coppie (nome di file, puntatore all'inode), alcuni di questi file potrebbero essere a loro
+volta directory, quindi é una struttura gerarchica, una directory puó essere modificata solo dal SO, mentre puó essere letta da ogni utente.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{immagini/InodeDirectory}
+\end{figure}
+Nell' immagine abbiamo una tabella fatta da 2 colonne, 1 nome del file o della sotto-directory e nell'altra colonna l'inode.\\
+\newline
+Piú file vengono messi dentro una directory, piú file vengono messi dentro ad una directory diventa grande,per un file che rappresenta
+una directory generalmente bastano i direct, nei casi in cui non bastino i direct anche i file che rappresentano le directory
+potranno usare single, double e triple indiretti.
+\subsection*{Accesso ai File}
+Sotto Linux ci sono gli utenti, dobbiamo essere abilitati come utente abilitato ad accedere al sistema, quindi quello che succede
+ogni processo viene eseguito da un qualche utente, quindi se un processo crea un file questo file avrá come propietario l'utente che
+ha eseguito il processo, un'altra cosa che succede dentro linux é che ci sono i gruppi, quindi un utente puó appartenere a piú gruppi,
+l'idea é che per l'accesso ci interessano 3 tipi di permessi:
+\begin{itemize}
+    \item Chi puó leggere il file
+    \item Chi puó scrivere il file
+    \item Chi puó eseguire il file
+\end{itemize}
+di queste terne di permessi ce ne sono 3:
+\begin{itemize}
+    \item Propietario
+    \item Gruppo
+    \item Altre classi
+\end{itemize}
+se c'é un utente che cerca di leggere un certo file, guarda chi é il propietario, se il propietario coincide con l'utente che
+legge il file, se non coincide si guarda se l'utente appartiene al gruppo, se non appartiene al gruppo si guarda se é un altro.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{immagini/AccessoAiFile}
+\end{figure}
+\subsection{Gestione dei File in Windows}
+Windows ha due tipi di file system:
+\begin{itemize}
+    \item \textbf{FAT} allocazione concatenata, con blocchi (cluster) di dimensione fissa
+    \item \textbf{NTFS} allocazione con bitmap(!), con blocchi di dimensione fissa
+    \end{itemize}
+\subsubsection*{FAT}
+FAT andava bene per i vecchi dischi, ma viene ancora usata per le chiavette USB, Formattare significa preparare il disco in maniera
+d'accogliere le informazioni di un certo file system (Es. per l'allocazione inidicizzata avremmo tutto il disco libero e avremo un File Allocation Table a cui verrá riservata un certo spazio)
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{immagini/DiscoFormattatoConFAT}
+\end{figure}
+Nell'immagine é presente una parte con la \textbf{file allocation table} che contiene le informazioni su dove sono allocati i file, poi c'é lo spazio per i dati, ed infine
+un area riservata, della file allocation table ci sono 2 copie, una é la copia principale e l'altra é la copia di backup, la file allocation table é organizzata come una lista
+questa colonna contiene un valore che puó essere a : 12 bit, 16 bit, 32 bit dipendentemente dalla versione di FAT, questa lista é lunga quanti sono i cluster del disco, ogni cluster
+puó essere di dimensione che va da 2 a 32 KB, se scelgo 32KB e il disco é 32MB avró che la lunghezza della lista sará 1000, la dimensione si puó scegliere in fase di formattazzione.
+\subsubsection*{File Allocation Table}
+Se la entry i-esima é 0 allora il cluster i-esimo é libero, se l' i-esima entry é diversa da 0 e non é un valore speciale allora indica
+qual'é il prossimo blocco di questo file, se per esempio nella riga 10 c'é scritto 5, vuol dire che il blocco 10 contiene i dati del file e i prossimi dati sono nel blocco 5,
+é abbastanza simile all'allocazione concatenata.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{immagini/FATPratico}
+\end{figure}
+All'inizio della regione dati c'é il \textbf{root directory} piú o meno simile ad Inode indica nome del file e \textbf{primo blocco}, uno
+dei valori speciali é tutti 1, che indica che il file é finito.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{immagini/InformazioniAreaRiservata}
+    \caption{Informazioni Area Riservata}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{immagini/ValoriSpeciali}
+    \caption{Valori speciali}
+\end{figure}
+\subsubsection*{Come sono fatte le directory}
+Tutti i metadati che in linux sono nell'Indoe in windows sono nella directory.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{immagini/TabellaDirectory}
+\end{figure}
+\subsection{Linux}
+Linux nativamente supporta 3 tipi di file system:
+\begin{itemize}
+    \item \textbf{Ext2} : File system UNIX, allocazione indicizzata, con blocchi di dimensione fissa
+    \item \textbf{Ext3} : Estensione di Ext2, con journaling
+    \item \textbf{Ext4} : Estensione di Ext3, con journaling, allocazione indicizzata, con blocchi di dimensione variabile
+\end{itemize}
+Ha il pieno supporto per gli Inode, memorizzati nella parte iniziale come per esempio quelli di windows, cone FAT< non é possibile memorizzare gli i-node sul dispositivo, vengono quindi creati
+on the fly, su una cache quando vengono aperti i file
+
+
+
