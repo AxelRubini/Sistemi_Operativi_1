@@ -1,0 +1,306 @@
+\section{Gestione della concorrenza}
+
+\subsection{Concetti di base}
+Per i SO moderni, é essenziale supportare piú processi in esecuzione:
+\begin{itemize}
+    \item \textbf{multiprogrammazione}: multiplo processi in memoria
+    \item \textbf{multiprocessing}: multiplo processi in esecuzione
+    \item \textbf{computazione distribuita}: multiplo processi in esecuzione su piú macchine
+\end{itemize}
+uno dei problemi principali é la \textbf{concorrenza}, ovvero gestire il modo con cui questi processi interagiscono tra di loro.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{immagini/multiprogrammazzione}
+    \caption{Multiprogrammazione: un solo processore, piú processi in memoria}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{immagini/MultiProcessing}
+    \caption{Multiprocessing: piú processori, piú processi in esecuzione}
+\end{figure}
+Il problema della concorrenza si presenta in entrambi i casi, puuó succedere che ci siano applicazione diverse che sono in
+esecuzione contemporaneamente, ci sono applicazioni che sono fatte per essere eseguite in parallelo, il sistema operativo stesso
+puó avere piú processi in esecuzione, in tutti questi casi é necessario gestire la concorrenza.
+\subsubsection*{Temini chiave}
+\begin{itemize}
+    \item \textbf{Mutua esclusione}: Ci sono 2 o piú processi che vogliono accedere alla stessa risorsa, peró solo uno alla volta puó accedere.
+    \item \textbf{Sezione critica}: Parte del codice di un processo in cui viene effettuato un accesso a una risorsa condivisa.
+    \item \textbf{Corsa critica(race condition)}: É un caso in cui la mutua esclusione non é rispettata, due o piú processi accedono alla stessa risorsa contemporaneamente.
+    \item \textbf{Operazione Atomica}: É una sequenza indivisibile di comandi, nessun altro processo pu;o vedere uno stato intermedio della sequenza o interrompere la sequenza, durante una operazione atomica il dispatcher non puó intervenire.
+    \item \textbf{Stallo (Deadlock)}: Situazione in cui due o piú processi sono in attesa di una risorsa che é posseduta da un altro processo, che a sua volta é in attesa di una risorsa posseduta da uno dei processi in attesa.
+    \item \textbf{Stallo attivo (livelock)}: Situazione in cui due o piú processi sono in attesa di una risorsa che é posseduta da un altro processo, che a sua volta é in attesa di una risorsa posseduta da uno dei processi in attesa.
+    \item \textbf{Morte per fame (Starvation)}: Un processo, pur essendo ready, non viene mai scelto dallo scheduler.
+\end{itemize}
+Le ultime tre situazioni devono essere evitate, quindi o il sistema operativo se ne prende carico o é il programmatore che deve evitare questi problemi.
+\subsection{Concorrenza : Difficoltá}
+La difficoltá prinicipale é che non si puó fare nessuna assunzione sul comportamento dei processi, e neanche su come funzionerá lo scheduler, un'altra
+difficoltá si ha quando si hanno delle risorse condivise (Es. una stampante, oppure due thread che accedono alla stessa variabile globale), per cui é necessario gestire anche l'allocazione
+delle risorse condivise, per cui diventa impossibile fare una gestione ottima perché c'é il rischio di violare la mutua esclusione (ES. un processo potrebbe richiedere un I/O e poi essere rimesso in ready prima di usarlo: quell'I/O va considerato locked oppure no ?),
+diventa inoltre difficile tracciare gli errori di programmazzione, spesso il manifestarsi di un errore dipende dallo scheduler e dagli altri processi presenti, rilanciare l'ultimo processo spesso non riproduce lo stesso errore (Es. é uscita una stampa di due documenti assieme, provo a rilanciare il processo dopo un errore ma la seconda volta va a buon fine).
+\begin{lstlisting}[language=C]
+    /* chin e chout sono due variabili globali */
+    void echo()
+    {
+        chin = getchar();
+        chout = chin;
+        putchar(chout);
+    }
+\end{lstlisting}
+Questo codice é un esempio di una funzione che utilizza standard input e output, prendo inputa da tastiera e lo salvo in chout, poi lo stampo al video, supponiamo che ci siano due
+processi che eseguono questa funzione, su un processore, quello che puó succedere é che lo scheduler faccia fare il getchar() a P1 e poi lo switch a P2, P2 esegue il putchar() e poi lo switch a P1, P1 esegue il putchar() e poi lo switch a P2, P2 esegue il putchar() e poi lo switch a P1, P1 esegue il putchar() e poi lo switch a P2, P2 esegue il putchar() e poi lo switch a P1, P1 esegue il putchar() e poi lo switch a P2, P2 esegue il putchar() e poi lo switch a P1, P1 esegue il putchar() e poi lo switch a P2, P2 esegue il putchar() e poi lo switch a P1, P1 esegue il putchar() e poi lo switch a P2, P2 esegue il putchar() e poi lo switch a P1, P1 esegue il putchar() e poi lo switch a P2, P2 esegue il putchar() e poi lo switch a P1, P1 esegue il putchar() e poi lo switch a P2, P2 esegue il putchar() e poi lo switch a P1, P1 esegue il putchar() e poi lo switch a P2, P2 esegue il putchar() e poi lo switch a P1, P1 esegue il putchar() e poi lo switch a P2, P2 esegue il putchar() e poi lo switch a P1, P1 esegue il putchar() e poi lo switch a P2, P2 esegue il putchar() e poi lo switch a P1, P1 esegue il putchar() e poi lo switch a P2, P2 esegue il putchar() e poi lo switch a P1, P1 esegue il putchar() e poi lo switch a P2, P2 esegue il putchar() e poi lo switch a P1, P1 esegue il putchar() e poi lo switch a P2, P2 esegue il putchar() e poi lo switch a P1, P1 esegue il putchar() e poi lo switch a P2,
+P2 esegue di nuovo getchar(), quando rientra P1 cono l'assegnazione di chout = chin, ma chin é stato sovrascritto da P2, quindi il programma non funziona correttamente.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{immagini/ConcorrenzaEsempioChinChoutUnProcessore}
+    \caption{Esempio di echo con 2 processi su un processore}
+\end{figure}
+il problema é dovuto alla concorrenza, perché ci sono piú processi che accedono a memoria condivisa.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{immagini/ConcorrenzaEsempioChinChoutPiúProcessori}
+    \caption{Esempio di echo con 2 processi su due processori}
+\end{figure}
+il problema si presenta anche con piú processori, perché chin e chout sono variabili globali, quindi sono in memoria condivisa, quindi anche in questo caso il programma non funziona correttamente.\\
+\newline
+Per risolvere il problema si puó  pensare che la funzione echo puó essere chiamata da un processo alla volta, o meglio la funzione echo
+puó essere chiamata da tanti processi, ma puó essere eseguita da un solo processo alla volta, facendo diventare echo atomica, peró c'é bisogno che qualcuno indichi che
+questa funzione é atomica.
+\subsection{Race Condition}
+Una corsa critica si ha quando piú processi leggono e scrivono una variabile condivisa, e lo fanno in modo tale che il risultato finale dipende dall'ordine in cui vengono eseguiti i processi,
+in particolare il risultato puó dipendere dal processo che finisce per ultimo, un sezione critica é la parte di codice di un processo che puó portare ad una corsa critica, nell'esempio 
+precedente la sezione critica é l'intera funzione.
+\subsection{Per ció che Riguarda il SO}
+Il SO deve:
+\begin{itemize}
+    \item Tenere traccia di vari processi
+    \item allocare e deallorare risorse ( CPU, memoria, I/O,file)
+    \item Proteggere dati e risorse dall'interferenza (non autorizzata) di altri processi
+    \item \textcolor{red}{assicurare che processi ed output siano indipendenti dalla velocitá di computazione (ovvero lo scheduling)}, indipendenti da intendere cum grano salis, rispetto alle specifiche di ciascun processo.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/RiassuntoComunicazioneTraProcessi}
+\end{figure}
+\subsection{I processi e la competizione per le risorse}
+Il problema é che quando i processi devono accedere ad una risorsa devono chiedere al sistema operativo, quindi la necessitá principale é quella
+della mutua esclusione, ovvero solo un processo alla volta puó accedere alla risorsa, peró bisogna stare attenti che comunque non ci siano deadlock e stavation nella systemcall,
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/MutuaEsclusionePerProcessiInCompetizione}
+\end{figure}
+Ho una systemcall (Voglio usare il monitor), sostanzialmente la systemcall dovrebbe:
+\begin{enumerate}
+    \item Entra nella sezione critica (Monitor)
+    \item Accede alla risorsa
+    \item Esce dalla sezione critica (Fa si che altri processi possano accedere alla risorsa)
+\end{enumerate}
+questo non é sempre possibile perché potrebbe essere necessario fare una richiesta di blocaggio, quindi ci sono tanti processi che vogliono
+accedere alla stessa risorsa, quindi la syscall fa una parte iniziale di controllo per vedere se posso concedere la risorsa, se ci sono
+piú processi la syscall deve decidere chi accede alla risorsa, tutti i processi sono visti come dei cicli in cui contiunamente fanno richieste a
+determinate risorse.
+\subsection{Mutua Esclusione}
+\subsubsection*{Mutua Esclusione Processi Cooperanti}
+Nei processi cooperanti é il programmatore che si deve occupare della mutua esclusione, il programmatore deve fare in modo che i processi
+non accedano contemporaneamente alla stessa risorsa, tutto questo viene fatto tramite strumenti messi a disposizione dal sistema operativo.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/MutuaEsclusioneProcessiCooperanti}
+\end{figure}
+\subsubsection*{Starvation}
+Supponiamo che ci siano 2 processi A e B tutti e due richiedono accesso alla stampante, quello che puó
+succedere che A rilascia la stampante, ma il sistema operativo lascia A in esecuzione quindi A fa in tempo a
+fare un'altra richiesta alla stampante, e quindi il sistema operativo puó decidere di dare la stampante ad A,
+in questo modo il processo B puó andare in \textbf{Starvation}
+\subsubsection*{Deadlock}
+Diciamo che A richiede prima la stampante e poi il monitor, mentre B richiede prima monitor e poi stampante,( \textbf{il fatto che siamo indipendenti dallo scheduler puó essere visto come un diavolo che cerca in tutti i modi di bucare il funzionamento del sistema operativo o delle applicazioni},
+quindi dobbiamo fare in modo di metterci nel caso peggiore di scheduling per validare un'applicazione), puó capitare che lo scheduler quindi faccia andare B in mezzo alle 2 richieste di A, quel tanto che basta
+per fargli richiedere il monitor, facendo in modo che B prende il monitor e prima che B possa prendere la stampante, faccio tornare A, e quando A
+chiede il monitor, il monitor é giá preso da B, e quindi A va in attesa, e quindi B non puó prendere la stampante perché A ha la stampante, e quindi
+A e B restano bloccati per sempre, eppure tutto é avvenuto legalmente: la mutua esclusione é stata rispettata, nessuno ha violato la mutua esclusione, peró abbiamo
+un deadlock.
+\subsubsection*{Requisiti per la mutua esclusione}
+\begin{itemize}
+    \item Solo un processo alla volta puó essere nella sezione critica per una risorsa
+    \item Niente Deadlock e Starvation
+    \item Nessuna assunzione su scheduling dei processi, né sul numero dei processi
+    \item Un processo deve entrare subito nella sezione critica, se nessun altro processo usa la risorsa (se un solo processo che vuole la risorsa, deve entrare subito)
+    \item Un processo che si trova nella sua sezione non-critica non deve bloccare altri processi che richiedono la risorsa (Non puó essere bloccato)
+    \item Un processo che sis trova nella sezione critica ne deve prima o poi uscire, piú in general ci vuole cooperazione, Es. non bisogna scrivere un processo che entra nella sua sezione critica senza chiamare entercritical().
+\end{itemize}
+\subsubsection*{Mutua Esclusione for Dummies}
+\begin{lstlisting}[language=C]
+    int bolt = 0
+    void P(int i)
+    {
+
+        while (true)
+            bolt = 1;
+            while (bolt == 1) /*do nothing*/;
+             /* critical section */;
+
+        bolt = 0;
+        /* remainder section */;
+    }
+    parbegin(P(0),P(1),\ldots,P(n-1));
+\end{lstlisting}
+metto bolt a 1 per prendermi la critical section e aspetto che bolt diventi 0 per uscire dalla critical section, questa é una cosa pessima perché
+metto bolt a 1 e non rilascio mai la risorsa per il loop infinito, basta inoltre che lo scheduler faccia eseguire i 2 processi in interleaving perfetto, per avere un deadlock, qundi
+va bene la safety, ma ci vuole anche la liveness (almeno un processo ci deve entrare).
+\begin{lstlisting}[language=C]
+    int bolt = 0
+    void P(int i)
+    {
+        while (true)
+            while (bolt == 1) /*do nothing*/;
+            bolt = 1;
+             /* critical section */;
+            bolt = 0;
+        /* remainder section */;
+    }
+    parbegin(P(0),P(1),\ldots,P(n-1));
+
+\end{lstlisting}
+quindi facciamo che quando entro nel secondo while, metto bolt a 1, se il dispatcher manda in esecuzione un'altro processo l'altro processo sará in attesa a while (bolt == 1), fino a che
+il primo processo non mette bolt a 0, quindi il secondo processo puó entrare nella sezione critica, il problema é che non basta che ci sia qualche scheduling, ma deve essere garantito che
+tutti gli scheduling possibili garantiscano l'unicitá di un processo nella sezione critica.
+\subsubsection*{Scheduler e Livello Macchina}
+Il dispatcher puó interrompere un processo in qualsiasi istante, vuol dire che potrebbe farlo anche prima che un'istruzione sia completata, per esempio nel sedcondo esempio se prendiamo in considerazione
+il secondo while del secondo esempio, a livello macchina dobbiamo fare un confronto tra bolt e 1, e sulla base del risultato del confronto, fare un salto oppure andara all'istruzione successiva, supponiamo
+che il primo processo P(0) venga eseguito fino a bolt = 1 compreso, si potrebbe pensare che la mutua esclusione sia garantita, ma non é cosí, supponiamo che prima
+sia andato in esecuzione P(1), che é riuscito ad arrivare a metá del test di bolt ==1, ovvero carico bolt in un registro e lo confronto con 1, il problema é che
+il dispatcher potrebbe aver lasciato caricare il valore di bolt in un registro, poi prima di fare il test manda in esecuzione P(0) che arrivato a bolt = 1, se P(1) riprende
+il controllo, il fatto che bolt sia stato messo a 1 da P(0) non lo sa, perché bolt é in memoria, e quindi P(1) potrebbe entrare nella sezione critica, quindi non é garantita la mutua esclusione.
+\subsection*{Mutua Esclusione con Interruzioni Disabilitate}
+\begin{lstlisting}[language=C]
+    while (true)
+    {
+    /* prima sezione critica */
+    disable_interrupts();
+    /* sezione critica */
+    riabilita_interrupts();
+    /* rimanente */
+    }
+\end{lstlisting}
+Una prima soluzione per garantire la mutua esclusione é quella di disabilitare le interruzioni, l'idea quindi é che immediatemnte
+prima di entrare nella sezione critica disabilito le interruzioni, in questo modo il dispatcher non puó interrompere il processo, dopo che ho finito la sezione critica
+riabilito le interruzioni.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{immagini/DisibilitazioneInterruzzioniMutuaEsclusione}
+\end{figure}
+Ci sono peró dei problemi, il primo problema é che se do questa possibilitá ai processi utenti é possibile che essi ne
+abusino e di conseguenza cala la multiprogrammazzione, inoltre disabilitare le interruzzioni funziona solo se abbiamo un
+solo processore, se abbiamo piú processori non funziona, attualmente la disabilitazione delle interruzzioni si fa solo
+in kernel mode.
+\subsubsection*{Istruzioni speciali macchina}
+Esistono delle soluzioni che sono piú accettabili :
+\begin{itemize}
+    \item \textbf{Compare\_and\_swap}:
+    \item \textbf{exchange}
+\end{itemize}
+L'exchange prende due indirizzi in memoria e scambia i valori, il punto é che sono 3 micro istruzioni, e potrebbe succedere che il processo venga interrotto in qualsiasi punto, ma l'hardware garantisce che se
+un processo esegue questa istruzione, nessun altro processo puó eseguire questa istruzione, quindi é garantita la mutua esclusione, e quindi é una istruzione
+atomica, quindi é garantita la mutua esclusione.
+    \begin{lstlisting}[language=C]{exchange}
+        void exchange(int register, int memory)
+        {
+            int temp
+            temp = memory;
+            memory = register;
+            register = temp;
+        }
+    \end{lstlisting}
+Il compare\_and\_swap é una istruzione che prende 3 parametri, una locazione di memoria, 2 valori, se il valore in memoria é uguale al secondo argomento, allora cambio il valore in memoria con il terzo argomento, in
+ogni caso la funzione ritorna il valore vecchio.
+\begin{lstlisting}[language=C]{compare_and_swap}
+    int compare_and_swap(int word, int testval, int newval)
+    {
+        int oldval;
+        oldval = word;
+        if (word == testval)
+            word = newval;
+        return oldval;
+    }
+\end{lstlisting}
+Subito prima della sezione critica faccio un compare\_and\_swap, che confronta il valore di ritorno della funzione con 1,
+al primo processo che arriva cambia il suo valore in 1 e ritorna 0 perché é il vecchio valore, supponiamo che
+a questo punto mando in esecuzione un altro processo, esso si troverá con bolt = 1, e quindi non entrerá nella sezione critica, quando il primo processo
+esce dalla sezione critica, mette bolt a 0, e quindi il secondo processo puó entrare nella sezione critica.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/CompareAndSwap}
+\end{figure}
+l'idea é che uso il fatto che bolt sia 1 per i processi successivi al primo per farli stare nel while, quindi non entrano nella sezione critica.\\
+\newline
+l'exchange si limita a scambiare i valori, per cui l'idea é che ho una variabile locale \textbf{keyi} (ogni processo ha il suo) quindi c'é uno scambio
+di valori tra keyi e bolt, se keyi é diverso da 0, allora il processo puó entrare nella sezione critica, altrimenti deve aspettare.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/Exchange}
+    \caption{Sbagliato}
+\end{figure}
+l'errore dietro a questo codice é che il primo che entra va avanti, e rimette bolt a 0, supponiamo che non ci siano altri processi, quando ritorna per un altra richiesta lui si
+blocca perché scambia 0 con 0.\\
+\newline
+I vantaggi di usare queste istruzione sono:
+\begin{itemize}
+    \item Applicabili a qualsiasi numero di processi, sia su un sistema ad un processore che su un sistema a piú processori
+    \item Semplici e quindi facili da verificare
+    \item Possono essere usate per gestire sezioni critiche multiple
+\end{itemize}
+Gli svantaggi sono:
+\begin{itemize}
+    \item Sono basati sul concetto di busy-waiting, il punto é che queste soluzioni devono continuamente ciclare fino a che non possono entrare nella sezione critica, dal punto di vista del sistema operativo lui non ha modo di distinguere un processo che sta facendo una istruzione speciale da una che sta facendo un'altro tipo di operazioni, quindi dal punto di vista del dispatcher questi processi sono ready e non possono essere esclusi, questa cosa é inevitabile, se siamo in un sistema operativo con dispatcher round robin viene eseguito fino a time-out
+    \item Possibile Starvation: supponiamo 2 processi P(1) passa, va in esecuzione P(2) dopo di che il dispatcher da la CPU a P(1) che va in esecuzione, e potrebbe riuscire a rientrare di nuovo nella sezione critica, e quindi P(2) va in starvation
+    \item Possibile Deadlock: se abbiamo una prioritá fissa tra i processi, es. P(1) con prioritá bassa e P(2) con prioritá alta, P(1) esce dalla sezione critica e P(2) entra, se P(1) rientra nella sezione critica, P(2) entra in sezione critica e P(1) non riesce piú ad entrare.
+\end{itemize}
+\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
