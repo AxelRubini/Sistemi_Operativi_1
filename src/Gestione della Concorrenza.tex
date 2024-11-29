@@ -254,9 +254,127 @@ Gli svantaggi sono:
     \item Possibile Starvation: supponiamo 2 processi P(1) passa, va in esecuzione P(2) dopo di che il dispatcher da la CPU a P(1) che va in esecuzione, e potrebbe riuscire a rientrare di nuovo nella sezione critica, e quindi P(2) va in starvation
     \item Possibile Deadlock: se abbiamo una prioritá fissa tra i processi, es. P(1) con prioritá bassa e P(2) con prioritá alta, P(1) esce dalla sezione critica e P(2) entra, se P(1) rientra nella sezione critica, P(2) entra in sezione critica e P(1) non riesce piú ad entrare.
 \end{itemize}
-\
-
-
+\subsection{Semafori}
+In molti caso per evitare il busy waiting si possono usare i semafori,che sono delle particolari strutture dati sulle quali é
+possibile fare 3 operazioni \textbf{Atomiche} garantite dal sistema operativo:
+\begin{itemize}
+    \item Initialize
+    \item decrement o semWait : puó mettere il processo in blocked per cui niente CPU sprecata come con il busy waiting
+    \item increment o semSignal : puó mettere un processo blocked in ready
+\end{itemize}
+I semafori racchiudono al loro interno un contatore, che puó essere decrementato o incrementato, la cosa interessante é che l'operazione di decremento che viene chiamata wait
+puó mettere in blocked il processo che la chiama, questo evita quindi il busy waiting, per contro l'operazione di incremento puó mettere in ready un processo che era blocked,
+stiamo quindi considerando un'altro tipo di blocked rispetto a quello che abbiamo visto con l'I/O, in questo caso il processo é blocked perché é in attesa di un semaforo,
+ovviamente essendo syscall, sono istruzioni che vengono eseguite in kernel mode e possono agire direttamente sui processi.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/ImplementazioneSemaforo}
+\end{figure}
+un semaforo quindi é composto da un intero e da una coda di processi, se facciamo una wait significa che decremento il contatore,
+se come risultato il contatore é negativo allora il processo che ha fatto questa chiamata va bloccato e messo in coda, invece una
+signal incrementa di 1 il contatore, se il valore é ancora negativo, significa che c'é qualcosa da sbloccare, per cui dalla coda
+vado a scegliere uno dei processi, lo tolgo e lo metto in ready.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/ImplementazioneSemaforiBinari}
+\end{figure}
+In un semaforo binario il valore non é piú un intero, ma un booleano, quindi il valore puó essere 0 o 1, l'idea
+peró rimane la stessa, se il valore é 0 il processo va in blocked, se la coda é vuota allora metto il valore a 1,
+invece se ci sono processi in coda, prendo uno di questi processi e lo metto in ready.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/PossibileImplementazioneDiSemafori}
+\end{figure}
+In questa maniera il busy waiting viene ridotto al minimo, se sono su un solo processore, disabilito le interruzzioni.
+\subsubsection{semafori Deboli e Forti}
+Si parla di semafori deboli e di semafori forti, a seconda di come devo scegliere il processo da sbloocare, i semafori forti sono quelli
+che usano una coda FIFO, se la politica non viene specificata, allora si parla di weak semaphore, sappiamo quindi che un generico processo
+viene sbloccato, con i semafori forti, é possibile inoltre evitare la starvation.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/SemaforiForti}
+\end{figure}
+\begin{enumerate}
+    \item Faccio una wait, il contatore va a 0 , ma il processo no va blocked perché il contatore é maggiore di 0
+    \item Faccio un'altra wait, il contatore va a -1, il processo va in blocked e va in esecuzione
+    \item D fa signal, il contatore va a 0, il processo B ritorna nella coda dei ready
+\end{enumerate}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/SemaforiForti2}
+\end{figure}
+In questa seconda parte faccio 3 wait e mando in blocked i tre processi, poi faccio 3 signal, ed in ordine FIFO sblocco i
+processi in blocked.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/MutuaEsclusioneConSemafori}
+\end{figure}
+A questo punto non c'é starvation,se siamo tra due processi non c'é in nessun caso, con piú di due processi
+ci potrebbe essere solo con i semafori deboli, perché potrebbe succedeere di sbloccare solo alcuni processi.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/EsecuzioneSemafori}
+\end{figure}
+\subsection{Produttore-Consumatore}
+Ci sono casi in cui siamo interessati ad avere processi che cooperano per risolvere un problema, un esempio é quello del produttore-consumatore,
+La situazione é la seguente:
+\begin{itemize}
+    \item Un processo produttore che crea dati e li mette in un buffer
+    \item Un consumatore che legge i dati dal buffer creati dal consumatore
+    \item al buffer puó accedere un solo processo alla volta
+\end{itemize}
+Il problema é quello di garantire la mutua esclusione nell'accesso, ma il vero problema che voglio risolvere é assicurare che
+i produttori non inseriscano i dati se il buffer é pieno, ed il consumatore non deve prendere dati se il buffer é vuoto, il progettista
+deve fare in modo che il produttore aspetti se il buffer é pieno, e il consumatore aspetti se il buffer é vuoto, in realtá ci sono molte
+varianti di questo problema, essenzialmente potremmo vedere il buffer come una coda, e quindi il produttore mette i dati in coda e il consumatore
+li toglie dalla coda, ma noi considereremo il buffer come una entitá ad accedere in mutua esclusione, supponiamo inizialmente che il buffer
+sia infinito allora:
+\begin{lstlisting}[language=C]
+    while (true){
+    /* produce an item v*/
+    b[in] = v;
+    in++;
+    }
+\end{lstlisting}
+\begin{lstlisting}[language=C]
+    while (true){
+        while (in <= out) /* do nothing  in attesa che out sia piú piccolo di in*/;
+        w = b[out];
+        out++;
+        /* consume the item w */
+    }
+\end{lstlisting}
+Da notare che la fase di produzione e di consumo sono da considerare operazioni locali quindi non c'é nessun problema se
+il produttore e il consumatore fanno queste operazioni in parallelo, v e w sono variabili locali, e almeno in deve essere globale.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/ProduttoreConsumatoreBuffer}
+\end{figure}
+\subsubsection*{Soluzione al Problema}
+\begin{figure}{H}
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/ProduttoreConsumatoreSoluzioneSbagliata}
+    \caption{Sbagliata}
+\end{figure}
+Una prima implementazione che potremmo pensare é quella riportata nell'immagine sopra che usa i
+semafori binari, nel nostro caso s=1 e delay =0, abbiamo un main con 2 processi, il produttore e il consumatore, essenzialmente c'é un controllo che
+ci sia la mutua esclusione sul buffer, questa cosa é controllata dal semaforo s, non deve succedere quindi che il consumatore cerchi di consumare
+con la coda vuota, oltre ai 2 semafori abbiamo una variabile condivisa n intera, durante la produzione incremento n , durante il consumo decremento n,
+quindi n rappresenta il numero di elementi nel buffer, l'idea é che il consumatore che va in esecuzione per primo si blocca perché delay é 0,
+quindi é necessario che il produttore vada in esecuzione per primo, a questo punto il produttore mette a 1 il semaforo delay, sbloccando quindi
+la possibilitá che il consumatore possa andare in esecuzione, l'idea é \textbf{ho messo un nuovo elemento dopo che il buffere é vuoto allora sblocco il consumatore},
+se dopo che ho consumato n diventa 0 allora mi devo bloccare, sembra sia una soluzione corrette, ma non lo é , infatti potrebbe succedere che a metá tra
+tra il consume ed il controllo che n sia = 0, il produttore mette un nuovo elemento, e quindi il consumatore non si blocca, essenzialmente per risolvere il problema dopo il decremento di
+n mi salvo il suo valore in una variabile locale, e quindi se viene richiamato il produttore che modifica n, io mi ricordo il vecchio valore di n.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/SoluzioneProduttoreConsumatoreCorretta}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/SoluzioneProduttoreConSemaforiGenerali}
+\end{figure}
+Qualsiasi cosa scritta con semafori binari si puó scrivere con semafori generali, vale anche il viceversa.
 
 
 
