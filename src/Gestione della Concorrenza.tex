@@ -310,7 +310,7 @@ processi in blocked.
     \includegraphics[width=0.7\linewidth]{immagini/MutuaEsclusioneConSemafori}
 \end{figure}
 A questo punto non c'é starvation,se siamo tra due processi non c'é in nessun caso, con piú di due processi
-ci potrebbe essere solo con i semafori deboli, perché potrebbe succedeere di sbloccare solo alcuni processi.
+ci potrebbe essere solo con i semafori deboli, perché potrebbe succedere di sbloccare solo alcuni processi.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth]{immagini/EsecuzioneSemafori}
@@ -375,6 +375,148 @@ n mi salvo il suo valore in una variabile locale, e quindi se viene richiamato i
     \includegraphics[width=0.7\linewidth]{immagini/SoluzioneProduttoreConSemaforiGenerali}
 \end{figure}
 Qualsiasi cosa scritta con semafori binari si puó scrivere con semafori generali, vale anche il viceversa.
+\subsection{Produttore consumatore con buffer circolare}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/ProduttoreConsumatoreBufferCircolare}
+\end{figure}
+Mettiamoci quindi nel caso in cui il buffer sia finito, quindi c'é una regione finita di memoria, che é dedicata al buffer,
+ed é gestita in maniera circolare, perché non si possono fare assunzioni su quanto sia veloce il produttore e il consumatore,
+potrebbe succedere che il dispatcher dia tempo al produttore di produrre 10 elementi, e il consumatore ne consumi 5, quindi
+questo si realizza con un buffer circolare, nell'immagine ci sono n slot nel buffer dove si possono mettere gli oggetti da consumare,
+l'idea é che esistono 2 puntatori in e out, in é il puntatore che indica dove mettere il prossimo elemento, out é il puntatore che
+indica dove prendere il prossimo elemento,c'é un problema, che é dovuto al fatto che se in e out sono uguali, il buffer puó essere sia pieno
+che vuoto, se lo pensiamo in maniera circolare, se per esempio: se n=5 , ed il consumatore non fa niente, ed il produttore mette 5 elementi,
+nel buffer se partivamo da uno stato vuoto, in = 0 e out = 0, dopo che il produttore ha messo 5 elementi, in = 0 e out = 0, quindi in e out sono uguali,
+ma il buffer é pieno, per questo motivo dobbiamo sacrificare uno slot, quindi il buffer avrá n-1 slot, a questo punto in=out significa che il buffer é vuoto,
+invece é pieno se $in + 1 mod (buffer) = out$, con questo scenario le cose rimangono simili a prima, addesso c'é un controllo sul pieno e sul vuoto.
+\begin{lstlisting}[language=C]
+    /*produce an item v */
+    while (true){
+        while ((in + 1) % n == out) /* do nothing */;
+        b[in] = v;
+        in = (in + 1) % n;
+    }
+\end{lstlisting}
+\begin{lstlisting}[language=C]
+
+    while (true){
+        while (in == out) /* do nothing */;
+        v = b[out];
+        out = (out + 1) % n;
+        /* consume the item w */
+    }
+\end{lstlisting}
+
+come facciamo quindi a scrivere una funzione con i semafori per risolvere il problema del produttore consumatore con buffer circolare? La soluzione
+di prima chiaramente non funzionerebbe perché non c'é un controllo sul pieno e sul vuoto, per risolverlo quindi abbiamo bisogno di un terzo semaforo.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/ProduttoreConsumatoreConBufferCircolare}
+\end{figure}
+quindi partiamo con un terzo semaforo inizializzato alla lunghezza del buffer, il trucco é
+\begin{enumerate}
+    \item Nel consumatore faccio subito una semWait su n cosí se sono il primo mi blocco
+    \item Nel produttore faccio subito una semWait su e, cosí se sono da solo e faccio subito sizeOfBuffer iterazioni, mi blocco.
+    \item ad ogni Wait deve corrispondere una signal, in modo che il produttore possa svegliare il consumatore e viceversa.
+\end{enumerate}
+questa é la soluzione classica di \textbf{Un produttore e un consumatore}.
+\subsection{Mutua Esclusione: Soluzioni software}
+Fino adesso abbiamo fatto riferimento a soluzioni atomiche, diamo uno sguardo a soluzioni, per risolvere
+problemi di mutua esclusione, che non sono atomiche, ovvero che non sono garantite dal sistema operativo.
+
+Esempio ci sono due processi che vogliono fare la critical section uno per volta, cerchiamo di capire come
+possiamo garantire questa cosa, facendo solo assegnamento a variabili, facciamo un primo tentativo (questa cosa funziona solo per 2 processi),
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/MutuaEsclusionePrimoTentativo}
+\end{figure}
+Una prima soluzione potrebbe essere che ho una variabile condivisa tra i due processi, se turn é 0 P(0) si blocca,
+se turn é 1 P(1) si blocca, chiaramente adesso é tutta attesa attiva, é chiaro che una soluzione come questa risolve il
+problema della mutua esclusione,se un processo é da solo e vuole accedere alla sezione critica non lo puó fare.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/MutuaEsclusioneSecondoTentativo}
+\end{figure}
+Invece che usare turn, uso un vettore (2 variabilli globali), il processo 0 legge la variabile dell'altro e modifica
+la propia, il processo 1 fa la stessa cosa, ovviamente questo non puó andare bene, se entrambi sono a 0 potrebbe succedere
+che entrambi entrano nella sezione critica, quindi non é garantita la mutua esclusione.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/MutuaEsclusioneTerzoTentativo}
+\end{figure}
+
+Metto il flag a 1, ad entrambi i processi, e poi faccio un while, il flag indica l'intento di iniziare
+la sezione critica, peró se faccio di nuovo un interleave perfetto, potrebbe succedere che entrambi i processi
+entrino in deadlock
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/MutuaEsclusioneQuartoTentativo}
+\end{figure}
+
+Invece di non fare niente provo, a dichiararmi inizialmente come non interessato a entrare nella sezione critica, e poi
+metto il flag a 0, e dopo un delay metto il flag a 1, mentre sono in attesa, l'idea é che se introduco un ritardo
+random, allora con una buona probabilitá succede che il processo uno fa in tempo a mettere il suo flag a true, ma
+il processo 0 non riesce a mettere a true il suo flag, quindi il processo 1 entra nella sezione critica, potrebbe effettivamente
+funzionare in un discorso con alta probabilitá, peró non é garantito, quindi non é una soluzione corretta.
+\subsubsection*{Algoritmo Di Dekker}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/Dekker}
+\end{figure}
+Solo una variabile condivisa non basta, solo 2 varibaili booleane non bastano, proviamo quindi a mettere insieme
+le due idee, succede che fin dall'inizio dichiaro di voler provare ad entrare nella sezione critica, l'idea é che c'é
+una variabile turn condivisa, se per caso non tocca a me rimetto a falso il fatto che voglio entrare e faccio una
+attesa attiva, fino a che turn continua ad essere l'altro, quando esco rimetto wants to enter a true, si puó dimostrare
+matematicamente che questa soluzione funziona.
+
+Questa soluzione vale solo per 2 processi, se ci sono piú processi, non é cosí semplice, garantisce la non starvation,
+garantisce che non ci siano deadlock e non richiede nessun supporto dal sistema operativo e dall'hardware, ci sono alcune
+architetture che potrebberó riordinare le istruzioni, chiaramente se ció succede l'algoritmo non funziona piú.
+
+\subsubsection*{Algoritmo Di Peterson}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/AlgoritmoDIPeterson}
+\end{figure}
+Anche qui il processo che vuole entrare segnala che vuole entrare, per quanto riguarda la variabile turn, viene acceduto in
+scrittura prima della critical section, il processo 0 dice di passare al processo 1 e viceversa, in questa maniera
+anche se facessimo un interleave perfetto, o P0 setta turn 1 o P1 setta turn 0, l'ultimo che fa l'assegnamento vince, alla fine
+l'unica cosa che serve dopo la critical section bisogna mettere a 0 il proprio flag.
+
+Questa soluzione vale solo per 2 processi, anche se é piú semplice estenderlo ad N processi, é possibile la bounded waiting.
+
+\subsection{Comunicazione Esplicita}
+
+É possibile che un processo mandi un messaggio ad un altro processo, per fare message passing funziona sia con memoria condivisa
+che distribuita, puó essere anche usata per la sincronizzazione, le funzionalita di message passing sono:
+\begin{itemize}
+    \item send (destinatario, messaggio da inviare)
+    \item receive (mittente, messaggio (zona di memoria dove voglio mettere i valori))
+    \item spesso c'é anche un test di ricezioine
+    \item notare che message é un input per la send ed un output per la receive
+\end{itemize}
+\subsubsection{Sincronizzazione}
+La comunicazione richiede anche una sincronizzazione, tra i processi, allora prima il mittente deve inviare e poi il ricevente deve ricevere,
+queste operazioni possono essere bloccanti ed operazioni che non bloccano, il test di ricezione non é mai bloccante.
+\subsubsection*{Send e receive bloccanti}
+Il processo che fa la send si blocca fino a che il processo che fa la receive non riceve il messaggio, quando il processo riceve il messaggio allora
+si sblocca il processo che ha fatto la send, tipicamente questo tipo di comunicazione si chiama randez-vous.
+\subsubsection*{Send  bloccante}
+Con ricezione bloccante, il mittente continua (non si blocca) il destinatario rimane bloccato finché non ha ricevuto il messaggio,
+Con ricezione non bloccante, se il messaggio c'é viene ricevuto, altrimenti il destinatario continua, la receive non bloccante puó settare un bit dentro il messaggio
+per dire se la ricezione é avvenuta oppure no, se la ricezione non é bloccante anche il mittente non é bloccante, sono operazioni atomiche, un solo processo per volta le esegue ed
+finché l'operazione non é completata, oppure il processo non viene bloccato.
+
+
+
+
+
+
 
 
 

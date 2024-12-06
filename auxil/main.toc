@@ -139,3 +139,7 @@
 \contentsline {subsection}{\numberline {7.7}Semafori}{109}{subsection.7.7}%
 \contentsline {subsubsection}{\numberline {7.7.1}semafori Deboli e Forti}{110}{subsubsection.7.7.1}%
 \contentsline {subsection}{\numberline {7.8}Produttore-Consumatore}{112}{subsection.7.8}%
+\contentsline {subsection}{\numberline {7.9}Produttore consumatore con buffer circolare}{116}{subsection.7.9}%
+\contentsline {subsection}{\numberline {7.10}Mutua Esclusione: Soluzioni software}{117}{subsection.7.10}%
+\contentsline {subsection}{\numberline {7.11}Comunicazione Esplicita}{120}{subsection.7.11}%
+\contentsline {subsubsection}{\numberline {7.11.1}Sincronizzazione}{120}{subsubsection.7.11.1}%
