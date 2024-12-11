@@ -506,11 +506,110 @@ queste operazioni possono essere bloccanti ed operazioni che non bloccano, il te
 \subsubsection*{Send e receive bloccanti}
 Il processo che fa la send si blocca fino a che il processo che fa la receive non riceve il messaggio, quando il processo riceve il messaggio allora
 si sblocca il processo che ha fatto la send, tipicamente questo tipo di comunicazione si chiama randez-vous.
-\subsubsection*{Send  bloccante}
+\subsubsection*{Send non bloccante}
 Con ricezione bloccante, il mittente continua (non si blocca) il destinatario rimane bloccato finché non ha ricevuto il messaggio,
 Con ricezione non bloccante, se il messaggio c'é viene ricevuto, altrimenti il destinatario continua, la receive non bloccante puó settare un bit dentro il messaggio
 per dire se la ricezione é avvenuta oppure no, se la ricezione non é bloccante anche il mittente non é bloccante, sono operazioni atomiche, un solo processo per volta le esegue ed
 finché l'operazione non é completata, oppure il processo non viene bloccato.
+\subsection{Indirizzamento}
+Il mittente deve poter dire a quale processo mandare il messaggio(o quali processi), lo stesso vale per il destinatario, ci sono 2 modi per fare l'indirizzamento:
+\begin{itemize}
+    \item Diretto: il mittente sa l'identitá del destinatario
+    \item Indiretto: il mittente sa l'identitá di un intermediario che sa l'identitá del destinatario.
+\end{itemize}
+\subsubsection*{Indirizzamento Diretto}
+Nell'indirizzamento diretto la send ha come parametro il destinatario, per la receive invece puó essere presente oppure no es:
+\begin{lstlisting}[language=C]
+    send(destinatario, messaggio);
+    receive(mittente, messaggio);
+\end{lstlisting}
+oppure
+\begin{lstlisting}[language=C]
+    send(destinatario, messaggio);
+    receive(null,messaggio);
+\end{lstlisting}
+questo succede perché dentro al messaggio é presente anche il mittente, inoltre ogni processo ha una sua coda per i messaggi; una volta piena, solitamente il messaggio si perde o
+viene ritrasmesso.
+\subsubsection*{Indirizzamento Indiretto}
+Nell'indirizzamento indiretto i messaggi vengono mandati ad una mailbox (Zona di memoria condivisa) ed va esplicitamente creata,il mittente manda messaggi alla mailbox,
+da dove il destinatario li prende, \textcolor{red}{se la ricezione é bloccante e ci sono piú processi in attesa su una ricezione, un solo processo viene sbloccato}
+Ci sono quindi evidenti analogie con il problema del produttore/consumatore, in particolare, se la mailbox é piena allora anche nbsend si deve bloccare, se serve solo per le
+versioni bloccanti, e per comunicazioni x-to-one, la mailbox puó avere dimensione 1.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/ComunicazioneIndiretta}
+\end{figure}
+\subsection{Struttura dei messaggi}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/StrutturaDiUnMessaggio}
+\end{figure}
+Di solito quando intendiamo un messaggio quello che intendiamo é il contenuto del messaggio(BODY), ma in realtá un messaggio é composto da:
+\begin{itemize}
+    \item \textbf{Header}: contiene informazioni sul messaggio, come il mittente, il destinatario, la lunghezza del messaggio, il tipo di messaggio, control information.
+    \item \textbf{Body}: contiene il contenuto del messaggio
+\end{itemize}
+le informazioni che si trovano nell'header sono chiamate meta-dati.
+\subsection{Usare i messaggi per risolvere la mutua esclusione}
+\begin{lstlisting}[language=C]
+    const messagge null = /* null message */;
+    mailbox box;
+    void P(int i) {
+        message m;
+        while (true){
+            receive(box, m);
+            /* sezione critica */
+            nbsend(box, m);
+            /* resto */
+        }
+    }
+    void main() {
+        box = create_mailbox();
+        nb_send(box, null);
+        parbegin(P(0), P(1));
+    }
+\end{lstlisting}
+Se io eseguo P senza inizializzazione non funzione, perché qualsiasi processo arriva si blocca sulla receive, questo
+funziona perché c'é la parte di inizializzazione nel main, prima di mandare gli n processi inizializzo la mailbox con un messaggio nullo,
+e mando in esecuzione i processi, se anche uno di questi processi arriva a ricevere il messaggio allora esegue la critical section, per poi
+rilasciare con un nbsend, se la send nel main la send é bloccante avremmo un problema perché i processi non andrebbero in esecuzione, invece
+all'interno di P potrei metterla bloccante, peró non é efficiente
+\subsection{Producer-Consumer con Message Passing}
+\begin{lstlisting}[languace = C]
+    const int capacity = /* dimensione del buffer */;
+    mailbox mayproduce, mayconsume;
+    const message null = /* null message */;
+    void main(){
+        mayproduce = create_mailbox();
+        mayconsume = create_mailbox();
+        for (int i = 1; i <= capacity; i++)
+            nb_send(mayproduce, null);
+        parbegin(producer(), consumer());
+    }
+\end{lstlisting}
+\begin{lstlisting}[language = C]
+    void producer(){
+        message m;
+        while (true){
+            receive(mayproduce, m);
+            /* produce an item */
+            nbsend(mayconsume, m);
+        }
+    }
+\end{lstlisting}
+\begin{lstlisting}[language = C]
+    void consumer(){
+        message m;
+        while (true){
+            receive(mayconsume, m);
+            /* consume an item */
+            nbsend(mayproduce, m);
+        }
+    }
+\end{lstlisting}
+All'inizion mayconsume é vuota quindi il consumatore si blocca se va in esecuzione per primo, quindi il produttore puó produrre e riempire mayconsume.
+
+
 
 
 

@@ -143,3 +143,7 @@
 \contentsline {subsection}{\numberline {7.10}Mutua Esclusione: Soluzioni software}{117}{subsection.7.10}%
 \contentsline {subsection}{\numberline {7.11}Comunicazione Esplicita}{120}{subsection.7.11}%
 \contentsline {subsubsection}{\numberline {7.11.1}Sincronizzazione}{120}{subsubsection.7.11.1}%
+\contentsline {subsection}{\numberline {7.12}Indirizzamento}{121}{subsection.7.12}%
+\contentsline {subsection}{\numberline {7.13}Struttura dei messaggi}{122}{subsection.7.13}%
+\contentsline {subsection}{\numberline {7.14}Usare i messaggi per risolvere la mutua esclusione}{123}{subsection.7.14}%
+\contentsline {subsection}{\numberline {7.15}Producer-Consumer con Message Passing}{123}{subsection.7.15}%
