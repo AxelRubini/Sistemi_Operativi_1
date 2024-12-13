@@ -608,6 +608,51 @@ all'interno di P potrei metterla bloccante, peró non é efficiente
     }
 \end{lstlisting}
 All'inizion mayconsume é vuota quindi il consumatore si blocca se va in esecuzione per primo, quindi il produttore puó produrre e riempire mayconsume.
+Le soluzioni con i messaggi possono tranqullamente risolvere la mutua esclusione, se usati bene evitano il deadlock, e se usati bene
+evitano la starvation (solo se le code di processi bloccati su una receive sono gestite in maniera "forte" ovvero i processi si sbloccano con FIFO).
+
+\subsection{Problema dei lettori e scrittori}
+Nel problema dei lettori e scrittori :
+\begin{itemize}
+    \item Un area dati condivisa
+    \item alcuni leggono ed altri scrivono
+\end{itemize}
+QUello che vogliamo ottenere che piú lettori possano leggere contemporaneamente, ma solo uno scrittore puó scrivere, se uno scrittore
+sta scrivendo allora nessun lettore puó leggere, la differenza con i produttori consumatori é che all'area di memoria si accede per intero.
+
+\subsubsection*{Soluzione con i semafori precedenza ai lettori}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/ScrittoriLettoriSemafori}
+\end{figure}
+In questa soluzione la precedenza é data ai lettori, c'é un intero condiviso, lo scrittore ha un semaforo di mutua esclusione,
+se per caso ci sono piú scrittori quelli rimangono in attesa sulla wait, per quanto riguarda i lettori, abbiamo il semaforo x
+per che incrementa i lettori, ho una condizione che dice \textbf{"Se sono primo blocco gli scrittori"},  dopo aver fatto la lettura
+decremento il numero di lettori, se sono l'ultimo lettore sblocco gli scrittori, il problema di questa soluzione é che gli scrittori
+potrebbero essere sottoposti a starvation.
+\subsubsection*{Soluzione con i semafori precedenza agli scrittori}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/ScrittoriLettoriSemaforiPrecScrittori}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/ScrittoriLettoriPrecScrittori2}
+\end{figure}
+In questa soluzione la precedenza é data agli scrittori, se c'é una sequenza di lettori che vogliono leggere, e un scrittore vuole scrivere,
+lascio finire i lettori che avevano giá fatto richiesta, e poi faccio scrivere lo scrittore, é presente una variabile che indica il numero di
+scrittori, la prima if blocca i lettori, la seconda sblocca i lettori.
+\subsubsection*{Soluzione con i messaggi}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/ScrittoriLettoriConIMessaggi}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{immagini/ScrittoriLettoriMessaggiController}
+\end{figure}
+
+ In questo tipo di soluzione, c'é un controller che gestisce le richieste.
 
 
 

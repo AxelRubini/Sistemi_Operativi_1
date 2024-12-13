@@ -147,3 +147,4 @@
 \contentsline {subsection}{\numberline {7.13}Struttura dei messaggi}{122}{subsection.7.13}%
 \contentsline {subsection}{\numberline {7.14}Usare i messaggi per risolvere la mutua esclusione}{123}{subsection.7.14}%
 \contentsline {subsection}{\numberline {7.15}Producer-Consumer con Message Passing}{123}{subsection.7.15}%
+\contentsline {subsection}{\numberline {7.16}Problema dei lettori e scrittori}{124}{subsection.7.16}%
