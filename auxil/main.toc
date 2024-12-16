@@ -148,3 +148,10 @@
 \contentsline {subsection}{\numberline {7.14}Usare i messaggi per risolvere la mutua esclusione}{123}{subsection.7.14}%
 \contentsline {subsection}{\numberline {7.15}Producer-Consumer con Message Passing}{123}{subsection.7.15}%
 \contentsline {subsection}{\numberline {7.16}Problema dei lettori e scrittori}{124}{subsection.7.16}%
+\contentsline {section}{\numberline {8}Deadlock}{127}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Risorse Riusabili}{129}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Risorse Consumabili}{129}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Allocazione delle Risorse}{130}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Condizioni di Deadlock per le risorse riusabili}{130}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Condizioni di Deadlock per le risorse consumabili}{130}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}Quando si verifica il Deadlock}{131}{subsection.8.6}%
